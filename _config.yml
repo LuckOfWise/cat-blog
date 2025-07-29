@@ -1,0 +1,14 @@
+title: ネコちゃん日記
+description: 毎日のネコちゃんの写真をお届け
+baseurl: ""
+url: "https://[your-username].github.io"
+
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+timezone: Asia/Tokyo
