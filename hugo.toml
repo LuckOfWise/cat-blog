@@ -1,4 +1,4 @@
-baseURL = "https://LuckOfWise.github.io/cat-blog/"
+baseURL = "https://luckofwise.github.io/cat-blog/"
 languageCode = "ja-jp"
 title = "ラムネの日々"
 theme = "ananke"
