@@ -2,6 +2,8 @@ baseURL = "https://luckofwise.github.io/cat-blog/"
 languageCode = "ja-jp"
 title = "ラムネの日々"
 theme = "ananke"
+relativeURLs = true
+canonifyURLs = true
 
 [params]
   mainSections = ["posts"]
