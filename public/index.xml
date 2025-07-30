@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ラムネの日々</title>
+    <link>http://localhost:1313/cat-blog/</link>
+    <description>Recent content on ラムネの日々</description>
+    <generator>Hugo</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 30 Jul 2025 16:38:38 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/cat-blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>http://localhost:1313/cat-blog/posts/test/</link>
+      <pubDate>Wed, 30 Jul 2025 16:38:38 +0900</pubDate>
+      <guid>http://localhost:1313/cat-blog/posts/test/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
