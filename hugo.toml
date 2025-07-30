@@ -10,4 +10,4 @@ canonifyURLs = true
 [params.ananke]
   show_recent_posts = true
   
-paginate = 10
+paginate = 36

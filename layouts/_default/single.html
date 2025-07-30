@@ -1,0 +1,46 @@
+{{ define "header" }}
+  {{ partial "page-header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  <article class="mw8 center ph3">
+    <header class="mt4 w-100 tc">
+      <h1 class="f1 athelas mt3 mb1">
+        {{ .Title }}
+      </h1>
+      {{ if not .Date.IsZero }}
+      <time class="f6 mv4 dib tracked" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+        {{ .Date.Format "2006年1月2日" }}
+      </time>
+      {{ end }}
+    </header>
+    
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray measure-wide center mt4">
+      {{ .Content }}
+      {{ partial "tags.html" . }}
+      
+      <div class="mt6 instapaper_ignoref">
+        {{ if .Site.Config.Services.Disqus.Shortname }}
+          {{ template "_internal/disqus.html" . }}
+        {{ end }}
+        {{ if .Site.Params.commentoEnable }}
+          {{ partial "commento.html" . }}
+        {{ end }}
+      </div>
+    </div>
+    
+    <!-- Navigation to other posts -->
+    <nav class="cf mt6 w-100 tc">
+      {{ with .PrevInSection }}
+        <a class="fl dib link dim black f6 f5-ns b pa2" href="{{ .RelPermalink }}">
+          &larr; {{ .Title }}
+        </a>
+      {{ end }}
+      {{ with .NextInSection }}
+        <a class="fr dib link dim black f6 f5-ns b pa2" href="{{ .RelPermalink }}">
+          {{ .Title }} &rarr;
+        </a>
+      {{ end }}
+    </nav>
+  </article>
+{{ end }}

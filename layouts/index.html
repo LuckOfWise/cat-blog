@@ -1,52 +1,130 @@
 {{ define "header" }}
 <header>
-  <div class="{{ .Site.Params.background_color_class | default " bg-black" }}">
+  <div class="{{ .Site.Params.background_color_class | default "bg-black" }}">
     {{ partial "site-navigation.html" . }}
   </div>
 </header>
 {{ end }}
 
 {{ define "main" }}
-<article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links {{ $.Param " text_color" |
-  default "mid-gray" }}">
-  {{ .Content }}
-</article>
+{{ $mainSections := site.Params.mainSections | default (slice "posts") }}
+{{ $pages := where .Site.RegularPages "Section" "in" $mainSections }}
+{{ $paginator := .Paginate $pages }}
 
-{{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of
-pages. */}}
-{{ $mainSections := site.Params.mainSections | default (slice "post") }}
-{{ $show_recent_posts := site.Params.ananke.show_recent_posts }}
-{{ $section := where $.Site.RegularPages "Section" "in" $mainSections }}
-{{ $section_count := len $section }}
-
-{{ if and ($show_recent_posts) (ge $section_count 1) }}
-<div class="pa3 pa4-ns w-100 w-70-ns center">
-  {{ $n_posts := $.Param "recent_posts_number" | default 10 }}
-
-  <section class="w-100 mw8">
-    {{/* Range through the first $n_posts items of the section */}}
-    {{ range (first $n_posts $section) }}
-    <div class="w-100 mb4 relative">
-      {{ .Render "summary-with-image" }}
-    </div>
+<div class="pa3 pa4-ns">
+  <!-- Photo Grid -->
+  <div class="grid-container">
+    {{ range $paginator.Pages }}
+      {{ $content := .RawContent }}
+      {{ $matches := findRE `!\[.*?\]\(([^)]+)\)` $content 1 }}
+      {{ $image := "" }}
+      {{ if $matches }}
+        {{ $match := index $matches 0 }}
+        {{ $rawImage := replaceRE `!\[.*?\]\(([^)]+)\)` "$1" $match }}
+        {{ if strings.HasPrefix $rawImage "/" }}
+          {{ $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" $rawImage) }}
+        {{ else }}
+          {{ $image = $rawImage }}
+        {{ end }}
+      {{ end }}
+      
+      <div class="grid-item">
+        <a href="{{ .RelPermalink }}" class="db link dim">
+          {{ if $image }}
+          <div class="aspect-ratio aspect-ratio--1x1">
+            <div class="aspect-ratio--object cover" style="background-image: url('{{ $image }}');"></div>
+          </div>
+          {{ else }}
+          <div class="aspect-ratio aspect-ratio--1x1 bg-gray">
+            <div class="aspect-ratio--object flex items-center justify-center">
+              <span class="white f6">No Image</span>
+            </div>
+          </div>
+          {{ end }}
+          <div class="pa2 bg-white">
+            <h3 class="f6 fw6 ma0 black truncate">{{ .Title }}</h3>
+            <time class="f7 gray">{{ .Date.Format "2006-01-02" }}</time>
+          </div>
+        </a>
+      </div>
     {{ end }}
-  </section>
+  </div>
 
-  {{ if ge $section_count (add $n_posts 1) }}
-  <section class="w-100">
-    <h1 class="f3">{{ i18n "more" }}</h1>
-    {{/* Now, range through the next four after the initial $n_posts items. Nest the requirements, "after" then "first"
-    on the outside */}}
-    {{ range (first 4 (after $n_posts $section)) }}
-    <h2 class="f5 fw4 mb4 dib {{ cond (eq $.Site.Language.LanguageDirection " rtl") "ml3" "mr3" }}">
-      <a href="{{ .RelPermalink }}" class="link black dim">
-        {{ .Title }}
+  <!-- Pagination -->
+  {{ if or $paginator.HasPrev $paginator.HasNext }}
+  <nav class="cf pa3 pa5-ns tc">
+    {{ if $paginator.HasPrev }}
+      <a class="fl dib link dim black f6 f5-ns b pa2" href="{{ $paginator.Prev.URL }}">
+        &larr; Previous
       </a>
-    </h2>
     {{ end }}
-  </section>
+    {{ if $paginator.HasNext }}
+      <a class="fr dib link dim black f6 f5-ns b pa2" href="{{ $paginator.Next.URL }}">
+        Next &rarr;
+      </a>
+    {{ end }}
+  </nav>
   {{ end }}
-
 </div>
-{{ end }}
+
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.grid-item {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.aspect-ratio {
+  position: relative;
+}
+
+.aspect-ratio--1x1 {
+  padding-bottom: 100%;
+}
+
+.aspect-ratio--object {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
 {{ end }}
