@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/Users/luckofwise/ghq/github.com/luckofwise/cat-blog",
+	"sourceRoot": "/home/runner/work/cat-blog/cat-blog",
 	"sources": [
 		"ananke/css/main.css"
 	],
