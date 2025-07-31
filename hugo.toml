@@ -21,3 +21,26 @@ sharetext = true
 networks = ["x-twitter"]
   
 paginate = 30
+
+# SEO Settings
+enableRobotsTXT = true
+enableGitInfo = true
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+# Related Content
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+  
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+    
+  [[related.indices]]
+    name = "date"
+    weight = 10

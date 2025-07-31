@@ -1,5 +1,8 @@
 {{ define "head" }}
+{{ partial "performance-hints.html" . }}
+{{ partial "seo-meta.html" . }}
 {{ partial "site-favicon.html" . }}
+{{ partial "structured-data.html" . }}
 {{ end }}
 
 {{ define "header" }}
@@ -11,6 +14,7 @@
 {{ end }}
 
 {{ define "main" }}
+{{ partial "breadcrumb.html" . }}
 <article class="pa4-ns">
   <div class="post-container">
     <header class="post-header">
@@ -44,6 +48,9 @@
         <span class="tag">#{{ . }}</span>
       {{ end }}
     </div>
+    
+    <!-- Related Posts -->
+    {{ partial "related-posts.html" . }}
     
     <!-- Navigation to other posts -->
     <nav class="post-nav">

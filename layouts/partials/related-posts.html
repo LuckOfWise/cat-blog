@@ -1,0 +1,157 @@
+{{ $related := .Site.RegularPages.Related . | first 3 }}
+{{ if $related }}
+<section class="related-posts">
+  <h3 class="related-title">関連する投稿</h3>
+  <div class="related-grid">
+    {{ range $related }}
+    {{ $content := .RawContent }}
+    {{ $matches := findRE `!\[.*?\]\(([^)]+)\)` $content 1 }}
+    {{ $image := "" }}
+    {{ if $matches }}
+      {{ $match := index $matches 0 }}
+      {{ $rawImage := replaceRE `!\[.*?\]\(([^)]+)\)` "$1" $match }}
+      {{ if strings.HasPrefix $rawImage "/" }}
+        {{ $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" $rawImage) }}
+      {{ else }}
+        {{ $image = $rawImage }}
+      {{ end }}
+    {{ end }}
+    
+    <article class="related-item">
+      <a href="{{ .RelPermalink }}" class="related-link">
+        {{ if $image }}
+        <div class="related-image">
+          <img src="{{ $image }}" alt="{{ .Title }}" loading="lazy">
+        </div>
+        {{ end }}
+        <div class="related-content">
+          <h4 class="related-post-title">{{ .Title }}</h4>
+          <time class="related-date">{{ .Date.Format "2006年1月2日" }}</time>
+          <div class="related-tags">
+            {{ range first 2 .Params.tags }}
+            <span class="related-tag">#{{ . }}</span>
+            {{ end }}
+          </div>
+        </div>
+      </a>
+    </article>
+    {{ end }}
+  </div>
+</section>
+
+<style>
+.related-posts {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.05), rgba(255, 255, 255, 0.95));
+  border-radius: 20px;
+  border: 2px solid rgba(255, 182, 193, 0.2);
+}
+
+.related-title {
+  color: #FF69B4;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.related-item {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 192, 203, 0.1);
+}
+
+.related-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.3);
+  border-color: #FFB6C1;
+}
+
+.related-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.related-image {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+
+.related-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.related-item:hover .related-image img {
+  transform: scale(1.05);
+}
+
+.related-content {
+  padding: 0.75rem;
+}
+
+.related-post-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #FF69B4;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.related-date {
+  font-size: 0.75rem;
+  color: #666;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.related-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.related-tag {
+  font-size: 0.7rem;
+  color: #FF69B4;
+  background: rgba(255, 182, 193, 0.2);
+  padding: 0.125rem 0.375rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .related-posts {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+  
+  .related-image {
+    height: 100px;
+  }
+}
+</style>
+{{ end }}

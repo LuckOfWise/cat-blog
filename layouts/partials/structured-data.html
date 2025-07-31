@@ -1,0 +1,111 @@
+{{ if .IsHome }}
+<!-- Website Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "inLanguage": "ja-JP",
+  "author": {
+    "@type": "Person",
+    "name": "ラムネ",
+    "description": "オフィス猫"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Title }}",
+    "url": "{{ .Site.BaseURL }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ .Site.BaseURL }}/favicon.svg"
+    }
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ .Site.BaseURL }}/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- Blog Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "inLanguage": "ja-JP",
+  "author": {
+    "@type": "Person",
+    "name": "ラムネ",
+    "description": "オフィス猫"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Title }}",
+    "url": "{{ .Site.BaseURL }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ .Site.BaseURL }}/favicon.svg"
+    }
+  }
+}
+</script>
+{{ else if .IsPage }}
+{{ $images := findRE `!\[.*?\]\(([^)]+)\)` .RawContent }}
+{{ $image := "" }}
+{{ if $images }}
+  {{ $match := index $images 0 }}
+  {{ $rawImage := replaceRE `!\[.*?\]\(([^)]+)\)` "$1" $match }}
+  {{ if strings.HasPrefix $rawImage "/" }}
+    {{ $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" $rawImage) }}
+  {{ else }}
+    {{ $image = $rawImage }}
+  {{ end }}
+{{ end }}
+
+<!-- BlogPosting Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ .Title }}",
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}",
+  "url": "{{ .Permalink }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "inLanguage": "ja-JP",
+  "author": {
+    "@type": "Person",
+    "name": "ラムネ",
+    "description": "オフィス猫"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ .Site.Title }}",
+    "url": "{{ .Site.BaseURL }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ .Site.BaseURL }}/favicon.svg"
+    }
+  },
+  {{ if $image }}
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ $image }}",
+    "width": 800,
+    "height": 600
+  },
+  {{ end }}
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  "keywords": {{ if .Params.tags }}"{{ delimit .Params.tags ", " }}"{{ else }}"猫, ペット, 日常, ブログ"{{ end }}
+}
+</script>
+{{ end }}

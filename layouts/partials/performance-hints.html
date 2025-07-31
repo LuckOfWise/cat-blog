@@ -1,0 +1,42 @@
+<!-- Performance Optimization Meta Tags -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+
+<!-- Resource Hints -->
+{{ if .IsHome }}
+<link rel="preload" href="{{ .Site.BaseURL }}/favicon.svg" as="image" type="image/svg+xml">
+{{ end }}
+
+<!-- Critical CSS Inlining Hint -->
+<style>
+/* Critical CSS for above-the-fold content */
+.bg-soft-pink {
+  background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+}
+
+body {
+  background: linear-gradient(to bottom, #FFF8DC, #F0F8FF) !important;
+  font-family: 'Comic Sans MS', cursive, sans-serif !important;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+}
+</style>
+
+<!-- Prefetch key pages -->
+{{ if .IsHome }}
+{{ range first 3 (where .Site.RegularPages "Section" "posts") }}
+<link rel="prefetch" href="{{ .RelPermalink }}">
+{{ end }}
+{{ end }}

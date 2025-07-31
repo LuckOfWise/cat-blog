@@ -1,0 +1,96 @@
+{{ if not .IsHome }}
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="{{ .Site.BaseURL }}" itemprop="item">
+        <span itemprop="name">ホーム</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    
+    {{ if eq .Section "posts" }}
+    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="{{ .Site.BaseURL }}/posts/" itemprop="item">
+        <span itemprop="name">投稿</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    {{ end }}
+    
+    {{ if and (eq .Section "tags") .IsPage }}
+    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="{{ .Site.BaseURL }}/tags/" itemprop="item">
+        <span itemprop="name">タグ</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </li>
+    {{ end }}
+    
+    {{ if .IsPage }}
+    <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name">{{ .Title }}</span>
+      <meta itemprop="position" content="{{ if eq .Section "posts" }}3{{ else }}2{{ end }}" />
+    </li>
+    {{ end }}
+  </ol>
+</nav>
+
+<style>
+.breadcrumb-nav {
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(255, 255, 255, 0.9));
+  border-radius: 15px;
+  font-size: 0.875rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  margin: 0 0.5rem;
+  color: #FF69B4;
+  font-weight: bold;
+}
+
+.breadcrumb-item a {
+  color: #FF69B4;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+  background: rgba(255, 105, 180, 0.1);
+  color: #FF1493;
+}
+
+.breadcrumb-item.active span {
+  color: #666;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .breadcrumb {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .breadcrumb-item + .breadcrumb-item::before {
+    margin: 0 0.25rem;
+  }
+}
+</style>
+{{ end }}

@@ -1,5 +1,8 @@
 {{ define "head" }}
+{{ partial "performance-hints.html" . }}
+{{ partial "seo-meta.html" . }}
 {{ partial "site-favicon.html" . }}
+{{ partial "structured-data.html" . }}
 {{ end }}
 
 {{ define "header" }}
@@ -36,7 +39,7 @@
       <a href="{{ .RelPermalink }}" class="db link dim">
         {{ if $image }}
         <div class="aspect-ratio aspect-ratio--1x1">
-          <div class="aspect-ratio--object cover" style="background-image: url('{{ $image }}');"></div>
+          <div class="aspect-ratio--object cover" style="background-image: url('{{ $image }}');" loading="lazy"></div>
           <time class="date-overlay">{{ .Date.Format "2006-01-02" }}</time>
         </div>
         {{ else }}
