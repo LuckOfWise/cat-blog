@@ -30,7 +30,7 @@
 <link rel="icon" href="http://localhost:1313//favicon.ico" type="image/x-icon" />
 <link rel="icon" type="image/svg+xml" href="http://localhost:1313//favicon.svg" />
 <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png" />
-<meta name="theme-color" content="#FFB6C1" />
+<meta name="theme-color" content="#FF8C69" />
     
 
     
@@ -72,7 +72,7 @@
 <style>
  
 .bg-soft-pink {
-  background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+  background: linear-gradient(135deg, #FF8C69, #FFA07A);
 }
 
 body {
@@ -156,14 +156,14 @@ body {
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
 
-<meta name="theme-color" content="#FFB6C1">
-<meta name="msapplication-TileColor" content="#FFB6C1">
+<meta name="theme-color" content="#FF8C69">
+<meta name="msapplication-TileColor" content="#FF8C69">
 
 <link rel="shortcut icon" href="http://localhost:1313//favicon.ico" type="image/x-icon" />
 <link rel="icon" href="http://localhost:1313//favicon.ico" type="image/x-icon" />
 <link rel="icon" type="image/svg+xml" href="http://localhost:1313//favicon.svg" />
 <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png" />
-<meta name="theme-color" content="#FFB6C1" />
+<meta name="theme-color" content="#FF8C69" />
 
 
   </head><body class="ma0 avenir bg-near-white development">
@@ -172,13 +172,15 @@ body {
 <header>
   <div class="bg-soft-pink">
     <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l center items-center justify-between">
+  <div class="flex center items-center justify-between">
     <a href="http://localhost:1313/" class="f3 fw2 hover-white white-90 dib no-underline">
       
         ラムネの日々
       
     </a>
-    <div class="flex-l items-center">
+    
+    
+    <div class="hidden-mobile flex-l items-center">
       
 
       
@@ -201,9 +203,272 @@ body {
       <div class="ananke-socials"></div>
 
     </div>
+    
+    
+    <div class="visible-mobile">
+      <button id="mobile-menu-button" class="mobile-menu-btn" aria-label="メニューを開く">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+  
+  
+  <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+    <div class="mobile-menu-content">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">メニュー</span>
+        <button id="mobile-menu-close" class="mobile-menu-close" aria-label="メニューを閉じる">
+          <span class="close-line"></span>
+          <span class="close-line"></span>
+        </button>
+      </div>
+      
+      
+        <ul class="mobile-menu-list">
+          
+          <li class="mobile-menu-item">
+            <a href="http://localhost:1313/posts/" class="mobile-menu-link">
+              投稿一覧
+            </a>
+          </li>
+          
+          <li class="mobile-menu-item">
+            <a href="http://localhost:1313/tags/" class="mobile-menu-link">
+              タグ一覧
+            </a>
+          </li>
+          
+        </ul>
+      
+    </div>
   </div>
 </nav>
 
+<style>
+ 
+.hidden-mobile {
+  display: flex;
+}
+
+.visible-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hidden-mobile {
+    display: none;
+  }
+  
+  .visible-mobile {
+    display: block;
+  }
+}
+
+ 
+.mobile-menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: white;
+  margin: 2px 0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+ 
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background: linear-gradient(135deg, #FF8C69, #FFA07A);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-menu-overlay.active .mobile-menu-content {
+  transform: translateX(0);
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu-title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.mobile-menu-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.close-line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+}
+
+.close-line:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.close-line:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.mobile-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  padding-left: 2rem;
+  color: white;
+}
+
+@media screen and (max-width: 400px) {
+  .mobile-menu-content {
+    width: 100%;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const menuButton = document.getElementById('mobile-menu-button');
+  const menuOverlay = document.getElementById('mobile-menu-overlay');
+  const menuClose = document.getElementById('mobile-menu-close');
+  
+  function openMenu() {
+    menuButton.classList.add('active');
+    menuOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeMenu() {
+    menuButton.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  menuButton.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  
+  
+  menuOverlay.addEventListener('click', function(e) {
+    if (e.target === menuOverlay) {
+      closeMenu();
+    }
+  });
+  
+  
+  const menuLinks = document.querySelectorAll('.mobile-menu-link');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  
+  
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && menuOverlay.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+});
+</script>
     <div class="tc-l pv2 ph3 ph4-ns">
       <h1 class="f3 fw2 white mb0 mt0 lh-title">
         小さな冒険
@@ -271,12 +536,12 @@ body {
 <style>
    
   .bg-soft-pink {
-    background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+    background: linear-gradient(135deg, #FF8C69, #FFA07A);
   }
 
    
   .bg-gradient-pastel {
-    background: linear-gradient(135deg, #FFB6C1 0%, #87CEEB 50%, #98FB98 100%);
+    background: linear-gradient(135deg, #FF8C69 0%, #87CEEB 50%, #98FB98 100%);
   }
 
    
@@ -344,17 +609,17 @@ body {
 
   .grid-item:hover {
     transform: translateY(-8px) rotate(1deg);
-    box-shadow: 0 15px 35px rgba(255, 182, 193, 0.4), 0 0 0 1px rgba(255, 105, 180, 0.3);
-    border-color: #FFB6C1;
+    box-shadow: 0 15px 35px rgba(255, 140, 105, 0.4), 0 0 0 1px rgba(255, 140, 0, 0.3);
+    border-color: #FF8C69;
   }
 
   .grid-item .pa2 {
-    background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(255, 255, 255, 0.9)) !important;
-    border-top: 2px solid rgba(255, 182, 193, 0.3);
+    background: linear-gradient(135deg, rgba(255, 140, 105, 0.1), rgba(255, 255, 255, 0.9)) !important;
+    border-top: 2px solid rgba(255, 140, 105, 0.3);
   }
 
   .grid-item h3 {
-    color: #FF69B4 !important;
+    color: #FF6347 !important;
     font-weight: bold !important;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
   }
@@ -410,19 +675,19 @@ body {
 
    
   nav.cf a {
-    background: linear-gradient(135deg, #FFB6C1, #FF69B4) !important;
+    background: linear-gradient(135deg, #FF8C69, #FF6347) !important;
     color: white !important;
     border-radius: 25px !important;
     padding: 12px 24px !important;
     text-decoration: none !important;
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 99, 71, 0.3);
     transition: all 0.3s ease;
   }
 
   nav.cf a:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
-    background: linear-gradient(135deg, #FF69B4, #FFB6C1) !important;
+    box-shadow: 0 6px 20px rgba(255, 99, 71, 0.4);
+    background: linear-gradient(135deg, #FF6347, #FF8C69) !important;
   }
 
    
@@ -453,19 +718,26 @@ body {
   }
 
   .breadcrumb a {
-    color: #FF69B4;
+    color: #D2691E;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
   }
 
   .breadcrumb a:hover {
-    color: #FF1493;
-    text-decoration: underline;
+    color: #B22222;
+    background: rgba(255, 140, 105, 0.2);
+    transform: translateY(-1px);
   }
 
   .breadcrumb li:last-child span {
-    color: #333;
-    font-weight: bold;
+    color: #2F4F4F;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    background: rgba(255, 140, 105, 0.1);
+    border-radius: 6px;
   }
 
   @media screen and (max-width: 480px) {
@@ -480,7 +752,7 @@ body {
 </style>
 
     </main>
-    <footer class="bg-light-pink bottom-0 w-100 pa3" role="contentinfo">
+    <footer class="bg-light-orange bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
     &copy;  ラムネの日々 2025 

@@ -60,9 +60,9 @@
 </div>
 
 <style>
-  /* やわらかいピンクのヘッダー背景 */
+  /* やわらかいオレンジのヘッダー背景 */
   .bg-soft-pink {
-    background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+    background: linear-gradient(135deg, #FF8C69, #FFA07A);
   }
 
   /* メインコンテンツエリア */
@@ -126,7 +126,7 @@
   .tag-item:hover {
     transform: translateY(-8px) rotate(1deg);
     box-shadow: 0 15px 35px rgba(255, 182, 193, 0.4), 0 0 0 1px rgba(255, 105, 180, 0.3);
-    border-color: #FFB6C1;
+    border-color: #FF8C69;
   }
 
   .tag-content {
@@ -139,7 +139,7 @@
   .tag-icon {
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, #FF69B4, #FFB6C1);
+    background: linear-gradient(135deg, #FF6347, #FF8C69);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -155,7 +155,7 @@
   .tag-name {
     font-size: 1.25rem;
     font-weight: bold;
-    color: #FF69B4;
+    color: #FF6347;
     margin: 0 0 0.25rem 0;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
   }
@@ -207,19 +207,26 @@
   }
 
   .breadcrumb a {
-    color: #FF69B4;
+    color: #D2691E;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
   }
 
   .breadcrumb a:hover {
-    color: #FF1493;
-    text-decoration: underline;
+    color: #B22222;
+    background: rgba(255, 140, 105, 0.2);
+    transform: translateY(-1px);
   }
 
   .breadcrumb li:last-child span {
-    color: #333;
-    font-weight: bold;
+    color: #2F4F4F;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    background: rgba(255, 140, 105, 0.1);
+    border-radius: 6px;
   }
 
   @media screen and (max-width: 480px) {

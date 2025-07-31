@@ -30,7 +30,7 @@
 <link rel="icon" href="http://localhost:1313//favicon.ico" type="image/x-icon" />
 <link rel="icon" type="image/svg+xml" href="http://localhost:1313//favicon.svg" />
 <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png" />
-<meta name="theme-color" content="#FFB6C1" />
+<meta name="theme-color" content="#FF8C69" />
     
 
     
@@ -73,7 +73,7 @@
 <style>
  
 .bg-soft-pink {
-  background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+  background: linear-gradient(135deg, #FF8C69, #FFA07A);
 }
 
 body {
@@ -166,14 +166,14 @@ body {
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
 
-<meta name="theme-color" content="#FFB6C1">
-<meta name="msapplication-TileColor" content="#FFB6C1">
+<meta name="theme-color" content="#FF8C69">
+<meta name="msapplication-TileColor" content="#FF8C69">
 
 <link rel="shortcut icon" href="http://localhost:1313//favicon.ico" type="image/x-icon" />
 <link rel="icon" href="http://localhost:1313//favicon.ico" type="image/x-icon" />
 <link rel="icon" type="image/svg+xml" href="http://localhost:1313//favicon.svg" />
 <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png" />
-<meta name="theme-color" content="#FFB6C1" />
+<meta name="theme-color" content="#FF8C69" />
 
 
 
@@ -233,13 +233,15 @@ body {
 <header>
   <div class="bg-soft-pink">
     <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l center items-center justify-between">
+  <div class="flex center items-center justify-between">
     <a href="http://localhost:1313/" class="f3 fw2 hover-white white-90 dib no-underline">
       
         ラムネの日々
       
     </a>
-    <div class="flex-l items-center">
+    
+    
+    <div class="hidden-mobile flex-l items-center">
       
 
       
@@ -262,104 +264,303 @@ body {
       <div class="ananke-socials"></div>
 
     </div>
+    
+    
+    <div class="visible-mobile">
+      <button id="mobile-menu-button" class="mobile-menu-btn" aria-label="メニューを開く">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+  
+  
+  <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+    <div class="mobile-menu-content">
+      <div class="mobile-menu-header">
+        <span class="mobile-menu-title">メニュー</span>
+        <button id="mobile-menu-close" class="mobile-menu-close" aria-label="メニューを閉じる">
+          <span class="close-line"></span>
+          <span class="close-line"></span>
+        </button>
+      </div>
+      
+      
+        <ul class="mobile-menu-list">
+          
+          <li class="mobile-menu-item">
+            <a href="http://localhost:1313/posts/" class="mobile-menu-link">
+              投稿一覧
+            </a>
+          </li>
+          
+          <li class="mobile-menu-item">
+            <a href="http://localhost:1313/tags/" class="mobile-menu-link">
+              タグ一覧
+            </a>
+          </li>
+          
+        </ul>
+      
+    </div>
   </div>
 </nav>
 
+<style>
+ 
+.hidden-mobile {
+  display: flex;
+}
+
+.visible-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hidden-mobile {
+    display: none;
+  }
+  
+  .visible-mobile {
+    display: block;
+  }
+}
+
+ 
+.mobile-menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: white;
+  margin: 2px 0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+ 
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background: linear-gradient(135deg, #FF8C69, #FFA07A);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-menu-overlay.active .mobile-menu-content {
+  transform: translateX(0);
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu-title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.mobile-menu-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.close-line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+}
+
+.close-line:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.close-line:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.mobile-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  padding-left: 2rem;
+  color: white;
+}
+
+@media screen and (max-width: 400px) {
+  .mobile-menu-content {
+    width: 100%;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const menuButton = document.getElementById('mobile-menu-button');
+  const menuOverlay = document.getElementById('mobile-menu-overlay');
+  const menuClose = document.getElementById('mobile-menu-close');
+  
+  function openMenu() {
+    menuButton.classList.add('active');
+    menuOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeMenu() {
+    menuButton.classList.remove('active');
+    menuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  menuButton.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  
+  
+  menuOverlay.addEventListener('click', function(e) {
+    if (e.target === menuOverlay) {
+      closeMenu();
+    }
+  });
+  
+  
+  const menuLinks = document.querySelectorAll('.mobile-menu-link');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  
+  
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && menuOverlay.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+});
+</script>
   </div>
 </header>
 
     <main class="pb7" role="main">
       
-
-<nav aria-label="breadcrumb" class="breadcrumb-nav">
-  <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a href="http://localhost:1313/" itemprop="item">
-        <span itemprop="name">ホーム</span>
-      </a>
-      <meta itemprop="position" content="1" />
-    </li>
-    
-    
-    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <a href="http://localhost:1313//posts/" itemprop="item">
-        <span itemprop="name">投稿</span>
-      </a>
-      <meta itemprop="position" content="2" />
-    </li>
-    
-    
-    
-    
-    
-    <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-      <span itemprop="name">ラムネのふわふわキャッチな一日</span>
-      <meta itemprop="position" content="3" />
-    </li>
-    
-  </ol>
-</nav>
-
-<style>
-.breadcrumb-nav {
-  margin: 1rem 0;
-  padding: 0 1rem;
-}
-
-.breadcrumb {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0.75rem 1rem;
-  background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(255, 255, 255, 0.9));
-  border-radius: 15px;
-  font-size: 0.875rem;
-}
-
-.breadcrumb-item {
-  display: flex;
-  align-items: center;
-}
-
-.breadcrumb-item + .breadcrumb-item::before {
-  content: ">";
-  margin: 0 0.5rem;
-  color: #FF69B4;
-  font-weight: bold;
-}
-
-.breadcrumb-item a {
-  color: #FF69B4;
-  text-decoration: none;
-  padding: 0.25rem 0.5rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.breadcrumb-item a:hover {
-  background: rgba(255, 105, 180, 0.1);
-  color: #FF1493;
-}
-
-.breadcrumb-item.active span {
-  color: #666;
-  font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  .breadcrumb {
-    font-size: 0.75rem;
-    padding: 0.5rem 0.75rem;
-  }
+<div class="pa3 pa4-ns">
   
-  .breadcrumb-item + .breadcrumb-item::before {
-    margin: 0 0.25rem;
-  }
-}
-</style>
+  <div class="breadcrumb-container">
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="http://localhost:1313/">
+          <span itemprop="name">ホーム</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="http://localhost:1313//posts/">
+          <span itemprop="name">投稿</span>
+        </a>
+        <meta itemprop="position" content="2" />
+      </li>
+      
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">  
+        <span itemprop="name">ラムネのふわふわキャッチな一日</span>
+        <meta itemprop="position" content="3" />
+      </li>
+    </ol>
+  </div>
 
-<article class="pa4-ns">
+<article>
   <div class="post-container">
     <header class="post-header">
       <h1 class="post-title">ラムネのふわふわキャッチな一日</h1>
@@ -431,17 +632,18 @@ main.pb7 {
 }
 
 .bg-soft-pink {
-  background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+  background: linear-gradient(135deg, #FF8C69, #FFA07A);
+}
+
+ 
+.bg-light-orange {
+  background: linear-gradient(135deg, #FF7F50, #FFA07A);
 }
 
 .post-container {
   max-width: 800px;
   margin: 0 auto;
-  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,248,220,0.8));
-  border-radius: 25px;
-  padding: 40px;
-  box-shadow: 0 15px 35px rgba(255,182,193,0.3);
-  border: 3px solid rgba(255,192,203,0.2);
+  padding: 20px 0;
 }
 
 .post-header {
@@ -452,7 +654,7 @@ main.pb7 {
 }
 
 .post-title {
-  color: #FF69B4;
+  color: #FF6347;
   font-size: 2.5rem;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
@@ -500,7 +702,7 @@ main.pb7 {
 }
 
 .tag {
-  background: linear-gradient(135deg, #FFB6C1, #FF69B4);
+  background: linear-gradient(135deg, #FF8C69, #FF6347);
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
@@ -570,9 +772,9 @@ main.pb7 {
 }
 
 .nav-prev, .nav-next {
-  background: linear-gradient(135deg, #FFB6C1, #FF69B4);
+  background: linear-gradient(135deg, #FF8C69, #FF6347);
   color: white !important;
-  padding: 12px 24px;
+  padding: 12px 16px;
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
@@ -580,12 +782,16 @@ main.pb7 {
   transition: all 0.3s ease;
   max-width: 45%;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 .nav-prev:hover, .nav-next:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(255,105,180,0.4);
-  background: linear-gradient(135deg, #FF69B4, #FFB6C1);
+  background: linear-gradient(135deg, #FF6347, #FF8C69);
 }
 
  
@@ -603,12 +809,11 @@ nav a:hover {
 
 @media screen and (max-width: 768px) {
   .post-container {
-    margin: 10px;
-    padding: 20px;
+    padding: 10px 0;
   }
   
   .post-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .post-nav {
@@ -618,12 +823,97 @@ nav a:hover {
   
   .nav-prev, .nav-next {
     max-width: 100%;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+ 
+.pa3.pa4-ns {
+  background: linear-gradient(45deg, rgba(255, 182, 193, 0.1), rgba(135, 206, 235, 0.1));
+  border-radius: 20px;
+  margin: 20px 20px 10px 20px;
+  padding: 30px 30px 20px 30px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .pa3.pa4-ns {
+    margin: 8px !important;
+    padding: 15px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pa3.pa4-ns {
+    margin: 5px !important;
+    padding: 10px !important;
+  }
+}
+
+ 
+.breadcrumb-container {
+  margin-bottom: 2rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: "›";
+  margin: 0 8px;
+  color: #999;
+  font-weight: bold;
+}
+
+.breadcrumb a {
+  color: #D2691E;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+}
+
+.breadcrumb a:hover {
+  color: #B22222;
+  background: rgba(255, 140, 105, 0.2);
+  transform: translateY(-1px);
+}
+
+.breadcrumb li:last-child span {
+  color: #2F4F4F;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 140, 105, 0.1);
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 480px) {
+  .breadcrumb {
+    font-size: 0.8rem;
+  }
+  
+  .breadcrumb li:not(:last-child)::after {
+    margin: 0 4px;
   }
 }
 </style>
+</div>
 
     </main>
-    <footer class="bg-light-pink bottom-0 w-100 pa3" role="contentinfo">
+    <footer class="bg-light-orange bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
     &copy;  ラムネの日々 2025 
