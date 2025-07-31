@@ -9,6 +9,8 @@ canonifyURLs = true
   background_color_class = "bg-light-pink"
   text_color_class = "dark-gray"
   description = "オフィス猫ラムネの可愛い日常を写真で綴るブログ。毎日のお昼寝、探検、おやつの時間など、愛らしい猫の日々をお楽しみください。"
+  favicon = "/favicon.ico"
+  custom_css = []
   
 [params.ananke]
   show_recent_posts = true
