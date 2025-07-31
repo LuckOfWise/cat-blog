@@ -1,0 +1,308 @@
+{{ define "head" }}
+{{ partial "performance-hints.html" . }}
+{{ partial "seo-meta.html" . }}
+{{ partial "site-favicon.html" . }}
+{{ partial "structured-data.html" . }}
+{{ end }}
+
+{{ define "header" }}
+<header>
+  <div class="bg-soft-pink">
+    {{ partial "site-navigation.html" . }}
+    <div class="tc-l pv2 ph3 ph4-ns">
+      <h1 class="f3 fw2 white mb0 mt0 lh-title">
+        {{ .Title }}  
+      </h1>
+      <p class="f6 white-80 mt1 mb0">{{ .Title }}に関連する投稿一覧</p>
+    </div>
+  </div>
+</header>
+{{ end }}
+
+{{ define "main" }}
+<div class="pa3 pa4-ns">
+  <!-- Breadcrumb for tag pages -->
+  <div class="breadcrumb-container">
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="{{ .Site.BaseURL }}">
+          <span itemprop="name">ホーム</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">  
+        <span itemprop="name">{{ .Title }}</span>
+        <meta itemprop="position" content="2" />
+      </li>
+    </ol>
+  </div>
+
+  <!-- Photo Grid - same as homepage -->
+  <div class="grid-container">
+    {{ $pages := .Pages }}
+    {{ $paginator := .Paginate $pages 30 }}
+    {{ range $paginator.Pages }}
+    {{ $content := .RawContent }}
+    {{ $matches := findRE `!\[.*?\]\(([^)]+)\)` $content 1 }}
+    {{ $image := "" }}
+    {{ if $matches }}
+    {{ $match := index $matches 0 }}
+    {{ $rawImage := replaceRE `!\[.*?\]\(([^)]+)\)` "$1" $match }}
+    {{ if strings.HasPrefix $rawImage "/" }}
+    {{ $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" $rawImage) }}
+    {{ else }}
+    {{ $image = $rawImage }}
+    {{ end }}
+    {{ end }}
+
+    <div class="grid-item">
+      <a href="{{ .RelPermalink }}" class="db link dim">
+        {{ if $image }}
+        <div class="aspect-ratio aspect-ratio--1x1">
+          <div class="aspect-ratio--object cover" style="background-image: url('{{ $image }}');" loading="lazy"></div>
+          <time class="date-overlay">{{ .Date.Format "2006-01-02" }}</time>
+        </div>
+        {{ else }}
+        <div class="aspect-ratio aspect-ratio--1x1 bg-gray">
+          <div class="aspect-ratio--object flex items-center justify-center">
+            <span class="white f6">No Image</span>
+          </div>
+          <time class="date-overlay">{{ .Date.Format "2006-01-02" }}</time>
+        </div>
+        {{ end }}
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">{{ .Title }}</h3>
+        </div>
+      </a>
+    </div>
+    {{ end }}
+  </div>
+
+  <!-- Pagination -->
+  {{ if or $paginator.HasPrev $paginator.HasNext }}
+  <nav class="cf pa3 pa5-ns tc">
+    {{ if $paginator.HasPrev }}
+    <a class="fl dib link dim black f6 f5-ns b pa2" href="{{ $paginator.Prev.URL }}">
+      &larr; 前のページ
+    </a>
+    {{ end }}
+    {{ if $paginator.HasNext }}
+    <a class="fr dib link dim black f6 f5-ns b pa2" href="{{ $paginator.Next.URL }}">
+      次のページ &rarr;
+    </a>
+    {{ end }}
+  </nav>
+  {{ end }}
+</div>
+
+<style>
+  /* やわらかいピンクのヘッダー背景 */
+  .bg-soft-pink {
+    background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+  }
+
+  /* カラフルなグラデーション背景（使用していません） */
+  .bg-gradient-pastel {
+    background: linear-gradient(135deg, #FFB6C1 0%, #87CEEB 50%, #98FB98 100%);
+  }
+
+  /* メインコンテンツエリア */
+  body {
+    background: linear-gradient(to bottom, #FFF8DC, #F0F8FF) !important;
+    font-family: 'Comic Sans MS', cursive, sans-serif !important;
+  }
+
+  /* メイン要素の余分な下パディングを調整 */
+  main.pb7 {
+    padding-bottom: 2rem !important;
+  }
+
+  .pa3.pa4-ns {
+    background: linear-gradient(45deg, rgba(255, 182, 193, 0.1), rgba(135, 206, 235, 0.1));
+    border-radius: 20px;
+    margin: 20px 20px 10px 20px;
+    padding: 30px 30px 20px 30px !important;
+  }
+
+  @media screen and (max-width: 480px) {
+    .pa3.pa4-ns {
+      margin: 5px !important;
+      padding: 10px !important;
+    }
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .grid-container {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .grid-item {
+    background: linear-gradient(135deg, #FFF 0%, #FFF8DC 100%);
+    box-shadow: 0 8px 25px rgba(255, 182, 193, 0.3), 0 0 0 1px rgba(255, 192, 203, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .grid-item:hover {
+    transform: translateY(-8px) rotate(1deg);
+    box-shadow: 0 15px 35px rgba(255, 182, 193, 0.4), 0 0 0 1px rgba(255, 105, 180, 0.3);
+    border-color: #FFB6C1;
+  }
+
+  .grid-item .pa2 {
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(255, 255, 255, 0.9)) !important;
+    border-top: 2px solid rgba(255, 182, 193, 0.3);
+  }
+
+  .grid-item h3 {
+    color: #FF69B4 !important;
+    font-weight: bold !important;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  }
+
+  .date-overlay {
+    position: absolute !important;
+    top: 10px !important;
+    left: 10px !important;
+    color: white !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #FF8C69, #FF6347) !important;
+    padding: 6px 12px !important;
+    border-radius: 15px !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    font-size: 0.8rem !important;
+    z-index: 100 !important;
+    display: block !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  }
+
+  .aspect-ratio {
+    position: relative;
+  }
+
+  .aspect-ratio--1x1 {
+    padding-bottom: 100%;
+  }
+
+  .aspect-ratio--object {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 17px 17px 0 0;
+  }
+
+  /* ナビゲーションスタイル */
+  nav a {
+    color: #FFFFFF !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold !important;
+    transition: all 0.3s ease;
+  }
+
+  nav a:hover {
+    transform: scale(1.1);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ページネーション */
+  nav.cf a {
+    background: linear-gradient(135deg, #FFB6C1, #FF69B4) !important;
+    color: white !important;
+    border-radius: 25px !important;
+    padding: 12px 24px !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  nav.cf a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+    background: linear-gradient(135deg, #FF69B4, #FFB6C1) !important;
+  }
+
+  /* Breadcrumb styles */
+  .breadcrumb-container {
+    margin-bottom: 2rem;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+  }
+
+  .breadcrumb li:not(:last-child)::after {
+    content: "›";
+    margin: 0 8px;
+    color: #999;
+    font-weight: bold;
+  }
+
+  .breadcrumb a {
+    color: #FF69B4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: #FF1493;
+    text-decoration: underline;
+  }
+
+  .breadcrumb li:last-child span {
+    color: #333;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 480px) {
+    .breadcrumb {
+      font-size: 0.8rem;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+      margin: 0 4px;
+    }
+  }
+</style>
+{{ end }}

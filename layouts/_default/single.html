@@ -45,7 +45,9 @@
     
     <div class="post-tags">
       {{ range .Params.tags }}
-        <span class="tag">#{{ . }}</span>
+        <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag-link">
+          <span class="tag">#{{ . }}</span>
+        </a>
       {{ end }}
     </div>
     
@@ -160,6 +162,16 @@ main.pb7 {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
   box-shadow: 0 4px 15px rgba(255,105,180,0.3);
   transition: all 0.3s ease;
+}
+
+.tag-link {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.tag-link:hover .tag {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,105,180,0.4);
 }
 
 .tag:hover {
