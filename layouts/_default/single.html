@@ -1,46 +1,200 @@
 {{ define "header" }}
-  {{ partial "page-header.html" . }}
+<header>
+  <div class="bg-soft-pink">
+    {{ partial "site-navigation.html" . }}
+  </div>
+</header>
 {{ end }}
 
 {{ define "main" }}
-  <article class="mw8 center ph3">
-    <header class="mt4 w-100 tc">
-      <h1 class="f1 athelas mt3 mb1">
-        {{ .Title }}
-      </h1>
+<article class="pa3 pa4-ns">
+  <div class="post-container">
+    <header class="post-header">
+      <h1 class="post-title">{{ .Title }}</h1>
       {{ if not .Date.IsZero }}
-      <time class="f6 mv4 dib tracked" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+      <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
         {{ .Date.Format "2006年1月2日" }}
       </time>
       {{ end }}
     </header>
     
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray measure-wide center mt4">
+    <div class="post-content">
       {{ .Content }}
-      {{ partial "tags.html" . }}
-      
-      <div class="mt6 instapaper_ignoref">
-        {{ if .Site.Config.Services.Disqus.Shortname }}
-          {{ template "_internal/disqus.html" . }}
-        {{ end }}
-        {{ if .Site.Params.commentoEnable }}
-          {{ partial "commento.html" . }}
-        {{ end }}
-      </div>
+    </div>
+    
+    <div class="post-tags">
+      {{ range .Params.tags }}
+        <span class="tag">#{{ . }}</span>
+      {{ end }}
     </div>
     
     <!-- Navigation to other posts -->
-    <nav class="cf mt6 w-100 tc">
+    <nav class="post-nav">
       {{ with .PrevInSection }}
-        <a class="fl dib link dim black f6 f5-ns b pa2" href="{{ .RelPermalink }}">
+        <a class="nav-prev" href="{{ .RelPermalink }}">
           &larr; {{ .Title }}
         </a>
       {{ end }}
       {{ with .NextInSection }}
-        <a class="fr dib link dim black f6 f5-ns b pa2" href="{{ .RelPermalink }}">
+        <a class="nav-next" href="{{ .RelPermalink }}">
           {{ .Title }} &rarr;
         </a>
       {{ end }}
     </nav>
-  </article>
+  </div>
+</article>
+
+<style>
+/* 記事ページ用のポップなスタイル */
+body {
+  background: linear-gradient(to bottom, #FFF8DC, #F0F8FF) !important;
+  font-family: 'Comic Sans MS', cursive, sans-serif !important;
+}
+
+.bg-soft-pink {
+  background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+}
+
+.post-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,248,220,0.8));
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(255,182,193,0.3);
+  border: 3px solid rgba(255,192,203,0.2);
+}
+
+.post-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid rgba(255,182,193,0.3);
+}
+
+.post-title {
+  color: #FF69B4;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.post-date {
+  color: #9370DB;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #FFB6C1, #DDA0DD);
+  padding: 8px 20px;
+  border-radius: 20px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(255,182,193,0.3);
+}
+
+.post-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.post-content p {
+  margin-bottom: 20px;
+}
+
+.post-content img {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255,182,193,0.4);
+  margin: 20px auto;
+  display: block;
+  max-width: 100%;
+  border: 4px solid rgba(255,192,203,0.3);
+}
+
+.post-tags {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 3px solid rgba(255,182,193,0.3);
+}
+
+.tag {
+  background: linear-gradient(135deg, #FFB6C1, #FF69B4);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin: 5px;
+  display: inline-block;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(255,105,180,0.3);
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,105,180,0.4);
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 3px solid rgba(255,182,193,0.3);
+}
+
+.nav-prev, .nav-next {
+  background: linear-gradient(135deg, #FFB6C1, #FF69B4);
+  color: white !important;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(255,105,180,0.3);
+  transition: all 0.3s ease;
+  max-width: 45%;
+  text-align: center;
+}
+
+.nav-prev:hover, .nav-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,105,180,0.4);
+  background: linear-gradient(135deg, #FF69B4, #FFB6C1);
+}
+
+/* ナビゲーションスタイル */
+nav a {
+  color: #FFFFFF !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-weight: bold !important;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .post-container {
+    margin: 20px;
+    padding: 25px;
+  }
+  
+  .post-title {
+    font-size: 2rem;
+  }
+  
+  .post-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-prev, .nav-next {
+    max-width: 100%;
+  }
+}
+</style>
 {{ end }}

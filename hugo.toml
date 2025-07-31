@@ -6,8 +6,10 @@ canonifyURLs = true
 
 [params]
   mainSections = ["posts"]
+  background_color_class = "bg-light-pink"
+  text_color_class = "dark-gray"
   
 [params.ananke]
   show_recent_posts = true
   
-paginate = 36
+paginate = 30
