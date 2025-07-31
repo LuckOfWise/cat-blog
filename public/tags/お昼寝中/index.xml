@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>お昼寝中 on ラムネの日々</title>
-    <link>http://localhost:1313/cat-blog/tags/%E3%81%8A%E6%98%BC%E5%AF%9D%E4%B8%AD/</link>
+    <link>https://luckofwise.github.io/cat-blog/tags/%E3%81%8A%E6%98%BC%E5%AF%9D%E4%B8%AD/</link>
     <description>Recent content in お昼寝中 on ラムネの日々</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 24 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/cat-blog/tags/%E3%81%8A%E6%98%BC%E5%AF%9D%E4%B8%AD/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://luckofwise.github.io/cat-blog/tags/%E3%81%8A%E6%98%BC%E5%AF%9D%E4%B8%AD/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>リラックスなラムネの日常</title>
-      <link>http://localhost:1313/cat-blog/posts/post-2025-07-30t12-23-53/</link>
+      <link>https://luckofwise.github.io/cat-blog/posts/post-2025-07-30t12-23-53/</link>
       <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cat-blog/posts/post-2025-07-30t12-23-53/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/cat-blog/images/cat-2025-07-30T12-23-53.jpg&#34; alt=&#34;今日のぼく&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;今日のぼくはオフィスでのんびりリラックスタイムだにゃん！パソコンの近くでお昼寝するのが大好きなんだ。ちょっとやんちゃして、みんなのお仕事をお休みにしてあげたにゃ。だってぼくが一番のお仕事だからね！ぼくのゴロゴロにみんなも癒されてるみたいで、大成功だにゃん。&lt;/p&gt;</description>
+      <guid>https://luckofwise.github.io/cat-blog/posts/post-2025-07-30t12-23-53/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://luckofwise.github.io/cat-blog/images/cat-2025-07-30T12-23-53.jpg&#34; alt=&#34;今日のぼく&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;今日のぼくはオフィスでのんびりリラックスタイムだにゃん！パソコンの近くでお昼寝するのが大好きなんだ。ちょっとやんちゃして、みんなのお仕事をお休みにしてあげたにゃ。だってぼくが一番のお仕事だからね！ぼくのゴロゴロにみんなも癒されてるみたいで、大成功だにゃん。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
