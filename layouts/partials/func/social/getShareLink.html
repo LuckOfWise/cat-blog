@@ -1,0 +1,44 @@
+{{- $context := .context -}}
+{{- $setup := .setup -}}
+{{- $separator := "&" -}}
+{{- $title := $context.Title | transform.HTMLEscape -}}
+{{- $description := $context.Summary | transform.Plainify | transform.HTMLEscape -}}
+{{- $permalink := $context.Permalink | transform.HTMLEscape -}}
+{{- with $setup.separator -}}
+  {{- $separator = . -}}
+{{- end -}}
+
+{{- $link := "" -}}
+
+{{/* Custom Twitter/X formatting with newline and hashtags */}}
+{{- if or (eq $setup.slug "twitter") (eq $setup.slug "x-twitter") -}}
+  {{/* Create hashtags from tags */}}
+  {{- $hashtags := slice -}}
+  {{- $hashtags = $hashtags | append "#ラムネの日々" -}}
+  {{- range $context.Params.tags -}}
+    {{- $hashtag := printf "#%s" . -}}
+    {{- $hashtags = $hashtags | append $hashtag -}}
+  {{- end -}}
+  {{- $hashtagString := collections.Delimit $hashtags " " -}}
+  
+  {{/* Create text with title, newline, URL, and hashtags */}}
+  {{- $tweetText := printf "%s\n%s\n%s" $title $permalink $hashtagString -}}
+  {{- $link = printf "%s?text=%s" $setup.link (collections.Querify "unused" $tweetText | strings.TrimPrefix "unused=") -}}
+{{- else -}}
+  {{/* Default behavior for other networks */}}
+  {{- $link = fmt.Printf "%s%s" $setup.link "?" -}}
+  {{- range $key, $value := $setup.particles -}}
+    {{- if compare.Eq $key "params" -}}
+      {{- $link = fmt.Printf "%s%s%s" $link $separator $value -}}
+    {{- else -}}
+      {{- if compare.Eq $value "description" -}}
+        {{- $link = fmt.Printf "%s%s%s" $link $separator (collections.Querify $key $description) -}}
+      {{- else if compare.Eq $value "title" -}}
+        {{- $link = fmt.Printf "%s%s%s" $link $separator (collections.Querify $key $title) -}}
+      {{- else if compare.Eq $value "permalink" -}}
+        {{- $link = fmt.Printf "%s%s%s" $link $separator (collections.Querify $key $permalink) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $link -}}

@@ -56,7 +56,15 @@
     
     <!-- X (Twitter) Share Button -->
     <div class="share-section">
-      <a href="https://twitter.com/intent/tweet?url={{ .Permalink | urlquery }}&text={{ .Title | urlquery }}" 
+      {{- $hashtags := slice -}}
+      {{- $hashtags = $hashtags | append "#ラムネの日々" -}}
+      {{- range .Params.tags -}}
+        {{- $hashtag := printf "#%s" . -}}
+        {{- $hashtags = $hashtags | append $hashtag -}}
+      {{- end -}}
+      {{- $hashtagString := collections.Delimit $hashtags " " -}}
+      {{- $tweetText := printf "%s\n%s\n%s" .Title .Permalink $hashtagString -}}
+      <a href="https://twitter.com/intent/tweet?text={{ $tweetText | urlquery }}" 
          target="_blank" 
          rel="noopener" 
          class="x-share-btn">
