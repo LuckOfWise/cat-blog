@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>チュール on ラムネの日々</title>
-    <link>http://localhost:1313/tags/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB/</link>
+    <link>https://www.ramune-diary.com/tags/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB/</link>
     <description>Recent content in チュール on ラムネの日々</description>
     <generator>Hugo</generator>
     <language>ja-jp</language>
     <lastBuildDate>Thu, 31 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.ramune-diary.com/tags/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ラムネのチュール大好きな一日</title>
-      <link>http://localhost:1313/posts/post-2025-07-31t13-08-48/</link>
+      <link>https://www.ramune-diary.com/posts/post-2025-07-31t13-08-48/</link>
       <pubDate>Thu, 31 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/post-2025-07-31t13-08-48/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/cat-2025-07-31T13-08-48.jpg&#34; alt=&#34;オフィス猫ラムネがチュールを食べて幸せそうにしている様子、机の上でゴロゴロと満足げな表情&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;こんにちは、ラムネだにゃん！今日もオフィスに漂うチュールの香りにつられて、ついつい机の上に乗っちゃった。みんなが「ラムネ、これ好きでしょ？」って優しく言ってくれたから、ぼくもゴロゴロが止まらなくなっちゃったにゃ〜。&lt;/p&gt;&#xA;&lt;p&gt;やっぱりチュールは特別なおやつだよね。もらうたびに幸せな気持ちになるにゃん。このまま一日中チュールを食べていたいけど、そうもいかない。でも安心して、またすぐにおねだりしに行くからね！&lt;/p&gt;</description>
+      <guid>https://www.ramune-diary.com/posts/post-2025-07-31t13-08-48/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.ramune-diary.com/images/cat-2025-07-31T13-08-48.jpg&#34; alt=&#34;オフィス猫ラムネがチュールを食べて幸せそうにしている様子、机の上でゴロゴロと満足げな表情&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;こんにちは、ラムネだにゃん！今日もオフィスに漂うチュールの香りにつられて、ついつい机の上に乗っちゃった。みんなが「ラムネ、これ好きでしょ？」って優しく言ってくれたから、ぼくもゴロゴロが止まらなくなっちゃったにゃ〜。&lt;/p&gt;&#xA;&lt;p&gt;やっぱりチュールは特別なおやつだよね。もらうたびに幸せな気持ちになるにゃん。このまま一日中チュールを食べていたいけど、そうもいかない。でも安心して、またすぐにおねだりしに行くからね！&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
