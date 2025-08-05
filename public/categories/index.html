@@ -69,10 +69,25 @@
     OneSignal.init({
       appId: "573400b8-97dd-4b8f-b416-760352a8739b",
       notifyButton: {
-        enable: true,
+        enable: true
       },
-      
-      language: 'ja'
+      language: 'ja',
+      promptOptions: {
+        slidedown: {
+          enabled: true,
+          prompts: [
+            {
+              type: "push",
+              autoPrompt: true,
+              text: {
+                actionMessage: "🐾 ラムネの新しい可愛い写真をいち早くお届けするにゃ！通知を受け取りませんか？",
+                acceptButton: "受け取るにゃ♪",
+                cancelButton: "今度にするにゃ"
+              }
+            }
+          ]
+        }
+      }
     });
   });
 </script>
