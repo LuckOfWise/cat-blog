@@ -67,12 +67,17 @@
 
     
     
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
 <script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
       appId: "573400b8-97dd-4b8f-b416-760352a8739b",
+      notifyButton: {
+        enable: true,
+      },
+      
+      language: 'ja'
     });
   });
 </script>
