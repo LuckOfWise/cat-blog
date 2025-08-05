@@ -1,4 +1,4 @@
-name: Deploy Hugo site to Pages
+name: Deploy Hugo site to Pages & Notify OneSignal
 
 on:
   push:
@@ -8,10 +8,35 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
+          fetch-depth: 2  # Need previous commit to detect changes
+
+      - name: Detect new posts
+        id: detect_posts
+        run: |
+          # Check if there are new .md files in content/posts/
+          NEW_POSTS=$(git diff --name-only --diff-filter=A HEAD~1 HEAD | grep "^content/posts/.*\.md$" || true)
+          if [ -z "$NEW_POSTS" ]; then
+            echo "No new posts detected"
+            echo "has_new_posts=false" >> $GITHUB_OUTPUT
+          else
+            echo "New posts detected:"
+            echo "$NEW_POSTS"
+            echo "has_new_posts=true" >> $GITHUB_OUTPUT
+            
+            # Get the latest post for notification
+            LATEST_POST=$(echo "$NEW_POSTS" | head -n 1)
+            SLUG=$(basename "$LATEST_POST" .md | tr '[:upper:]' '[:lower:]')
+            echo "latest_slug=$SLUG" >> $GITHUB_OUTPUT
+            echo "Latest post slug: $SLUG"
+          fi
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -27,3 +52,54 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          cname: www.ramune-diary.com
+
+      - name: Wait for deployment
+        if: steps.detect_posts.outputs.has_new_posts == 'true'
+        run: sleep 30  # Wait for pages to deploy
+
+      - name: Notify OneSignal
+        if: steps.detect_posts.outputs.has_new_posts == 'true'
+        run: |
+          if [ -z "${{ secrets.ONESIGNAL_API_KEY }}" ] || [ -z "${{ secrets.ONESIGNAL_APP_ID }}" ]; then
+            echo "OneSignal secrets not configured, skipping notification"
+            exit 0
+          fi
+          
+          # Extract post title from the latest post file
+          LATEST_POST_FILE=$(git diff --name-only --diff-filter=A HEAD~1 HEAD | grep "^content/posts/.*\.md$" | head -n 1)
+          POST_TITLE=$(grep "^title:" "$LATEST_POST_FILE" | sed 's/title: *"\(.*\)"/\1/' | sed 's/title: *\(.*\)/\1/')
+          
+          # Construct notification URL
+          POST_URL="https://www.ramune-diary.com/posts/${{ steps.detect_posts.outputs.latest_slug }}/"
+          
+          echo "Sending notification for: $POST_TITLE"
+          echo "URL: $POST_URL"
+          
+          RESPONSE=$(curl -s -X POST https://onesignal.com/api/v1/notifications \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -H "Authorization: Basic ${{ secrets.ONESIGNAL_API_KEY }}" \
+            -d "{
+              \"app_id\": \"${{ secrets.ONESIGNAL_APP_ID }}\",
+              \"included_segments\": [\"All\"],
+              \"headings\": {\"ja\": \"🐾 新しいラムネの記事だにゃ！\"},
+              \"contents\": {\"ja\": \"${POST_TITLE:-今日の可愛い一枚をチェック！}\"},
+              \"url\": \"$POST_URL\",
+              \"chrome_web_icon\": \"https://www.ramune-diary.com/favicon.ico\",
+              \"firefox_icon\": \"https://www.ramune-diary.com/favicon.ico\"
+            }")
+          
+          echo "OneSignal API Response: $RESPONSE"
+          
+          # Check if notification was successful
+          if echo "$RESPONSE" | grep -q '"id"'; then
+            echo "✅ Notification sent successfully!"
+          else
+            echo "❌ Failed to send notification"
+            echo "Response: $RESPONSE"
+            exit 1
+          fi
+
+        env:
+          ONESIGNAL_API_KEY: ${{ secrets.ONESIGNAL_API_KEY }}
+          ONESIGNAL_APP_ID: ${{ secrets.ONESIGNAL_APP_ID }}
