@@ -1,1 +1,13 @@
+<!-- OneSignal Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "573400b8-97dd-4b8f-b416-760352a8739b",
+    });
+  });
+</script>
+<!-- End OneSignal -->
+
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eb54a95b1d834a38aa4b91ee396c1b13"}'></script><!-- End Cloudflare Web Analytics -->
