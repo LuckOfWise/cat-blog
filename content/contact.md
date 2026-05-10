@@ -26,9 +26,11 @@ layout: "single"
 
 ### お問い合わせ先
 
-📧 **メール**: `luckofwise [at] sonicgarden.jp`
+現在、お問い合わせは **Instagram のダイレクトメッセージ** で受け付けています。
 
-スパム対策で「[at]」表記にしています。お送りの際は半角アット記号に置き換えてください。
+📩 **DM**: [@everyday_ramune](https://www.instagram.com/everyday_ramune/) のプロフィールから「メッセージ」を送ってください。
+
+ご相談内容に応じて、こちらから個別の連絡先（メールアドレス等）をお伝えします。
 
 ### 連絡時にお知らせいただきたいこと
 
@@ -43,8 +45,6 @@ layout: "single"
 
 - Instagram: [@everyday_ramune](https://www.instagram.com/everyday_ramune/)
 - Threads: 同じくInstagramのアカウントから連動
-
-DMでのご連絡も受け付けますが、案件のご相談はメールの方が確実です。
 
 ## メディアキット
 
