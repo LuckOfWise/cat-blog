@@ -76,37 +76,41 @@ jobs:
 
       - name: Notify OneSignal
         if: steps.detect_posts.outputs.has_new_posts == 'true'
+        continue-on-error: true
         run: |
           if [ -z "${{ secrets.ONESIGNAL_API_KEY }}" ] || [ -z "${{ secrets.ONESIGNAL_APP_ID }}" ]; then
             echo "OneSignal secrets not configured, skipping notification"
             exit 0
           fi
-          
+
           # Extract post title from the latest post file
           LATEST_POST_FILE=$(git diff --name-only --diff-filter=A HEAD~1 HEAD | grep "^content/posts/.*\.md$" | head -n 1)
           POST_TITLE=$(grep "^title:" "$LATEST_POST_FILE" | sed 's/title: *"\(.*\)"/\1/' | sed 's/title: *\(.*\)/\1/')
-          
+
           # Construct notification URL
           POST_URL="https://www.ramune-diary.com/posts/${{ steps.detect_posts.outputs.latest_slug }}/"
-          
+
           echo "Sending notification for: $POST_TITLE"
           echo "URL: $POST_URL"
-          
+
+          # OneSignal requires English (en) or Any (default) language content as a fallback,
+          # otherwise the API rejects with "Message Notifications must have Any/English language content".
+          # We mirror the Japanese strings into en so non-ja browsers still get a sensible notification.
           RESPONSE=$(curl -s -X POST https://onesignal.com/api/v1/notifications \
             -H "Content-Type: application/json; charset=utf-8" \
             -H "Authorization: Basic ${{ secrets.ONESIGNAL_API_KEY }}" \
             -d "{
               \"app_id\": \"${{ secrets.ONESIGNAL_APP_ID }}\",
               \"included_segments\": [\"All\"],
-              \"headings\": {\"ja\": \"🐾 新しいラムネの記事だにゃ！\"},
-              \"contents\": {\"ja\": \"${POST_TITLE:-今日の可愛い一枚をチェック！}\"},
+              \"headings\": {\"ja\": \"🐾 新しいラムネの記事だにゃ！\", \"en\": \"🐾 New Ramune post!\"},
+              \"contents\": {\"ja\": \"${POST_TITLE:-今日の可愛い一枚をチェック！}\", \"en\": \"${POST_TITLE:-Today's cute Ramune photo!}\"},
               \"url\": \"$POST_URL\",
               \"chrome_web_icon\": \"https://www.ramune-diary.com/favicon.ico\",
               \"firefox_icon\": \"https://www.ramune-diary.com/favicon.ico\"
             }")
-          
+
           echo "OneSignal API Response: $RESPONSE"
-          
+
           # Check if notification was successful
           if echo "$RESPONSE" | grep -q '"id"'; then
             echo "✅ Notification sent successfully!"
