@@ -1,0 +1,145 @@
+{{ define "head" }}
+{{ partial "performance-hints.html" . }}
+{{ partial "seo-meta.html" . }}
+{{ partial "site-favicon.html" . }}
+{{ partial "structured-data.html" . }}
+{{ end }}
+
+{{ define "header" }}
+<header>
+  <div class="bg-soft-pink">
+    {{ partial "site-navigation.html" . }}
+    <div class="tc-l pv2 ph3 ph4-ns">
+      <h1 class="f3 fw2 white mb0 mt0 lh-title">{{ .Title }}</h1>
+      <p class="f6 white-80 mt1 mb0">月別の全投稿アーカイブ</p>
+    </div>
+  </div>
+</header>
+{{ end }}
+
+{{ define "main" }}
+<div class="pa3 pa4-ns">
+  <div class="archive-container">
+    {{- $allPosts := where .Site.RegularPages "Section" "posts" -}}
+    {{- $byYearMonth := dict -}}
+    {{- range $allPosts -}}
+      {{- $key := .Date.Format "2006-01" -}}
+      {{- $existing := index $byYearMonth $key | default slice -}}
+      {{- $byYearMonth = merge $byYearMonth (dict $key (append . $existing)) -}}
+    {{- end -}}
+
+    {{- range $key, $posts := $byYearMonth -}}
+    {{- $year := substr $key 0 4 -}}
+    {{- $month := substr $key 5 2 -}}
+    <section class="archive-section">
+      <h2 class="archive-heading">{{ $year }}年{{ $month }}月 <span class="archive-count">（{{ len $posts }}件）</span></h2>
+      <ul class="archive-list">
+        {{ range (sort $posts "Date" "desc") }}
+        <li class="archive-item">
+          <time class="archive-date">{{ .Date.Format "1/2" }}</time>
+          <a href="{{ .RelPermalink }}" class="archive-link">{{ .Title }}</a>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+  </div>
+</div>
+
+<style>
+body {
+  background: linear-gradient(to bottom, #FFF8DC, #F0F8FF) !important;
+  font-family: 'Comic Sans MS', cursive, sans-serif !important;
+}
+main.pb7 { padding-bottom: 2rem !important; }
+
+.bg-soft-pink {
+  background: linear-gradient(135deg, #FF8C69, #FFA07A);
+}
+
+.pa3.pa4-ns {
+  background: linear-gradient(45deg, rgba(255, 182, 193, 0.1), rgba(135, 206, 235, 0.1));
+  border-radius: 20px;
+  margin: 20px 20px 10px 20px;
+  padding: 30px 30px 20px 30px !important;
+}
+
+.archive-container { max-width: 800px; margin: 0 auto; }
+
+.archive-section {
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #FFF 0%, #FFF8DC 100%);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.25);
+  border: 2px solid rgba(255, 192, 203, 0.3);
+}
+
+.archive-heading {
+  color: #FF6347;
+  font-size: 1.4rem;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px dashed rgba(255, 140, 105, 0.4);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.archive-count {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: normal;
+}
+
+.archive-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.archive-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px dotted rgba(255, 140, 105, 0.2);
+}
+
+.archive-item:last-child { border-bottom: none; }
+
+.archive-date {
+  flex-shrink: 0;
+  width: 3rem;
+  color: #fff;
+  background: linear-gradient(135deg, #FF8C69, #FF6347);
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.archive-link {
+  color: #444;
+  text-decoration: none;
+  flex-grow: 1;
+  transition: color 0.2s;
+}
+
+.archive-link:hover {
+  color: #FF6347;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+  .pa3.pa4-ns { margin: 5px !important; padding: 15px !important; }
+  .archive-section { padding: 1rem; }
+  .archive-heading { font-size: 1.15rem; }
+}
+
+nav a {
+  color: #FFFFFF !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold !important;
+}
+</style>
+{{ end }}
