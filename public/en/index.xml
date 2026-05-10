@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Everyday Ramune</title>
+    <link>https://www.ramune-diary.com/en/</link>
+    <description>Recent content on Everyday Ramune</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 10 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.ramune-diary.com/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Ramune</title>
+      <link>https://www.ramune-diary.com/en/about/</link>
+      <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.ramune-diary.com/en/about/</guid>
+      <description>&lt;h2 id=&#34;about-ramune&#34;&gt;About Ramune&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;&lt;/th&gt;&#xA;          &lt;th&gt;&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Name&lt;/td&gt;&#xA;          &lt;td&gt;Ramune (ラムネ)&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Sex&lt;/td&gt;&#xA;          &lt;td&gt;Male&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Breed&lt;/td&gt;&#xA;          &lt;td&gt;Munchkin (long-haired short-legged cat)&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Birth&lt;/td&gt;&#xA;          &lt;td&gt;March 20, 2025&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Where&lt;/td&gt;&#xA;          &lt;td&gt;An IT office in Tokyo&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Personality&lt;/td&gt;&#xA;          &lt;td&gt;Easygoing, slightly proud, curious without overdoing it&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;Camera-eye-contact and a fluffy belly are his signature charms.&#xA;Naps, exploration, and sunbathing are his daily routine.&lt;/p&gt;&#xA;&lt;h2 id=&#34;about-the-blog&#34;&gt;About the blog&lt;/h2&gt;&#xA;&lt;p&gt;A daily diary of one cat&amp;rsquo;s quiet life in a Tokyo office, told in photos.&#xA;Started in July 2025, aiming for daily updates.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

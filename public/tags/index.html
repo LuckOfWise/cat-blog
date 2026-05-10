@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja-jp">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -48,13 +48,13 @@
   <meta property="og:site_name" content="ラムネの日々">
   <meta property="og:title" content="Tags">
   <meta property="og:description" content="オフィス猫ラムネの可愛い日常を写真で綴るブログ。毎日のお昼寝、探検、おやつの時間など、愛らしい猫の日々をお楽しみください。">
-  <meta property="og:locale" content="ja_jp">
+  <meta property="og:locale" content="ja">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Tags">
   <meta itemprop="description" content="オフィス猫ラムネの可愛い日常を写真で綴るブログ。毎日のお昼寝、探検、おやつの時間など、愛らしい猫の日々をお楽しみください。">
-  <meta itemprop="datePublished" content="2025-08-04T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-08-04T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2026-05-10T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-05-10T00:00:00+00:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Tags">
   <meta name="twitter:description" content="オフィス猫ラムネの可愛い日常を写真で綴るブログ。毎日のお昼寝、探検、おやつの時間など、愛らしい猫の日々をお楽しみください。">
@@ -70,16 +70,56 @@
   OneSignal.push(function() {
     OneSignal.init({
       appId: "573400b8-97dd-4b8f-b416-760352a8739b",
+      language: 'ja',
       notifyButton: {
-        enable: true
+        enable: true,
+        size: 'medium',
+        position: 'bottom-right',
+        showCredit: false,
+        text: {
+          'tip.state.unsubscribed': 'ラムネの新しい記事を受け取る',
+          'tip.state.subscribed': '通知を受け取り中だにゃん',
+          'tip.state.blocked': '通知がブロックされてるにゃ',
+          'message.prenotify': 'クリックして購読',
+          'message.action.subscribed': 'ありがとうにゃ〜！新しい記事が出たらお知らせするにゃん🐾',
+          'message.action.resubscribed': 'おかえり！新しい記事が出たらお知らせするにゃん🐾',
+          'message.action.unsubscribed': 'またね、ラムネの記事はいつでも見にきてにゃ',
+          'dialog.main.title': 'ラムネの日々の通知',
+          'dialog.main.button.subscribe': '受け取る',
+          'dialog.main.button.unsubscribe': '解除する',
+          'dialog.blocked.title': '通知がブロックされてるにゃ',
+          'dialog.blocked.message': 'ブラウザの設定から通知を許可してにゃ〜'
+        }
       },
-      language: 'ja'
+      welcomeNotification: {
+        disable: false,
+        title: 'ラムネの日々',
+        message: 'ようこそにゃん🐾 新しい投稿が出たらお知らせするにゃ〜',
+        url: 'https://www.ramune-diary.com/'
+      },
+      promptOptions: {
+        slidedown: {
+          prompts: [{
+            type: 'push',
+            autoPrompt: false,
+            text: {
+              actionMessage: 'ラムネの新しい投稿を見逃さない通知を受け取りますか？',
+              acceptButton: '受け取る',
+              cancelButton: '今はやめとく'
+            }
+          }]
+        }
+      }
     });
   });
 </script>
 
 
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eb54a95b1d834a38aa4b91ee396c1b13"}'></script>
+
+
+    
+    
 
     
 
@@ -121,6 +161,12 @@ body {
 
 
 
+
+
+
+  
+
+
   
 
 
@@ -144,8 +190,7 @@ body {
 <meta property="og:title" content="Tags">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://www.ramune-diary.com//favicon.svg">
-<meta property="og:image:width" content="800">
-<meta property="og:image:height" content="600">
+
 <meta property="og:image:alt" content="Tagsの画像">
 <meta property="og:url" content="https://www.ramune-diary.com/tags/">
 <meta property="og:site_name" content="ラムネの日々">
@@ -160,8 +205,8 @@ body {
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://www.ramune-diary.com//favicon.svg">
 <meta name="twitter:image:alt" content="Tagsの画像">
-<meta name="twitter:creator" content="@ramune_cat">
-<meta name="twitter:site" content="@ramune_cat">
+<meta name="twitter:domain" content="ramune-diary.com">
+
 
 
 <meta name="robots" content="index, follow">
@@ -204,19 +249,46 @@ body {
     
     <div class="hidden-mobile flex-l items-center">
       
+<h4></h4>
+<ul class="pl0 mr3">
+    
+    <li class="list f5 f4-ns fw4 dib pr3">
+        <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/en/tags/">en</a>
+    </li>
+    
+</ul>
+
 
       
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/posts/" title="投稿一覧 page">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/posts/" title="投稿一覧 ページ">
               投稿一覧
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/tags/" title="タグ一覧 page">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/tags/" title="タグ一覧 ページ">
               タグ一覧
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/archive/" title="アーカイブ ページ">
+              アーカイブ
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/about/" title="ラムネについて ページ">
+              ラムネについて
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/contact/" title="お問い合わせ ページ">
+              お問い合わせ
             </a>
           </li>
           
@@ -259,6 +331,24 @@ body {
           <li class="mobile-menu-item">
             <a href="https://www.ramune-diary.com/tags/" class="mobile-menu-link">
               タグ一覧
+            </a>
+          </li>
+          
+          <li class="mobile-menu-item">
+            <a href="https://www.ramune-diary.com/archive/" class="mobile-menu-link">
+              アーカイブ
+            </a>
+          </li>
+          
+          <li class="mobile-menu-item">
+            <a href="https://www.ramune-diary.com/about/" class="mobile-menu-link">
+              ラムネについて
+            </a>
+          </li>
+          
+          <li class="mobile-menu-item">
+            <a href="https://www.ramune-diary.com/contact/" class="mobile-menu-link">
+              お問い合わせ
             </a>
           </li>
           
@@ -523,7 +613,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="tags-container">
     
     <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E3%81%84%E3%81%9F%E3%81%9A%E3%82%89" class="db link dim">
+      <a href="https://www.ramune-diary.com/tags/%E3%83%AA%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -531,15 +621,15 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
           </div>
           <div class="tag-info">
-            <h3 class="tag-name">いたずら</h3>
-            <p class="tag-count">1件の投稿</p>
+            <h3 class="tag-name">リラックス</h3>
+            <p class="tag-count">165件の投稿</p>
           </div>
         </div>
       </a>
     </div>
     
     <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E3%82%84%E3%81%A4" class="db link dim">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E6%98%BC%E5%AF%9D" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -547,8 +637,40 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
           </div>
           <div class="tag-info">
-            <h3 class="tag-name">おやつ</h3>
-            <p class="tag-count">1件の投稿</p>
+            <h3 class="tag-name">お昼寝</h3>
+            <p class="tag-count">106件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E6%8E%A2%E6%A4%9C" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">探検</h3>
+            <p class="tag-count">81件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B9" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">オフィス</h3>
+            <p class="tag-count">50件の投稿</p>
           </div>
         </div>
       </a>
@@ -564,6 +686,406 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="tag-info">
             <h3 class="tag-name">お仕事</h3>
+            <p class="tag-count">35件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E9%81%8A%E3%81%B3" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">遊び</h3>
+            <p class="tag-count">35件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%B5%E3%82%8F%E3%81%B5%E3%82%8F" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">ふわふわ</h3>
+            <p class="tag-count">23件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E3%82%84%E3%81%A4" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">おやつ</h3>
+            <p class="tag-count">22件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">チュール</h3>
+            <p class="tag-count">9件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%BF%E3%82%93%E3%81%AA" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">みんな</h3>
+            <p class="tag-count">7件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E5%86%92%E9%99%BA" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">冒険</h3>
+            <p class="tag-count">7件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E9%9A%A0%E3%82%8C%E5%AE%B6" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">隠れ家</h3>
+            <p class="tag-count">7件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%83%80%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">ダンボール</h3>
+            <p class="tag-count">6件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B9%E7%8C%AB" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">オフィス猫</h3>
+            <p class="tag-count">5件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%8F%E3%81%A4%E3%82%8D%E3%81%8E" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">くつろぎ</h3>
+            <p class="tag-count">4件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">キーボード</h3>
+            <p class="tag-count">4件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E5%A5%BD%E5%A5%87%E5%BF%83" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">好奇心</h3>
+            <p class="tag-count">4件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E6%96%B0%E7%99%BA%E8%A6%8B" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">新発見</h3>
+            <p class="tag-count">4件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%94%E3%81%AF%E3%82%93" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">ごはん</h3>
+            <p class="tag-count">3件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%82%AC%E3%82%A4%E3%83%89" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">ガイド</h3>
+            <p class="tag-count">3件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%82%BD%E3%83%95%E3%82%A1" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">ソファ</h3>
+            <p class="tag-count">3件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E4%BC%91%E6%97%A5" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">休日</h3>
+            <p class="tag-count">3件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E6%97%A5%E5%B8%B8" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">日常</h3>
+            <p class="tag-count">3件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%84%E3%81%9F%E3%81%9A%E3%82%89" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">いたずら</h3>
+            <p class="tag-count">2件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E3%82%82%E3%81%A1%E3%82%83" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">おもちゃ</h3>
+            <p class="tag-count">2件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E5%8F%8B%E9%81%94" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">お友達</h3>
+            <p class="tag-count">2件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E6%95%A3%E6%AD%A9" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">お散歩</h3>
+            <p class="tag-count">2件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E6%8E%A2%E6%A4%9C%E4%B8%AD" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">探検中</h3>
+            <p class="tag-count">2件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E7%A7%98%E5%AF%86%E5%9F%BA%E5%9C%B0" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">秘密基地</h3>
+            <p class="tag-count">2件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E6%89%8B%E5%85%A5%E3%82%8C" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">お手入れ</h3>
             <p class="tag-count">1件の投稿</p>
           </div>
         </div>
@@ -587,22 +1109,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     
     <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E6%98%BC%E5%AF%9D" class="db link dim">
-        <div class="tag-content">
-          <div class="tag-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
-            </svg>
-          </div>
-          <div class="tag-info">
-            <h3 class="tag-name">お昼寝</h3>
-            <p class="tag-count">2件の投稿</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    
-    <div class="tag-item">
       <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E6%98%BC%E5%AF%9D%E4%B8%AD" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
@@ -612,6 +1118,86 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="tag-info">
             <h3 class="tag-name">お昼寝中</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E6%B0%97%E3%81%AB%E5%85%A5%E3%82%8A" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">お気に入り</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E6%B0%97%E3%81%AB%E5%85%A5%E3%82%8A%E3%81%AE%E5%A0%B4%E6%89%80" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">お気に入りの場所</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E8%86%9D" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">お膝</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E9%81%8A%E3%81%B3" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">お遊び</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%8A%E9%83%A8%E5%B1%8B" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">お部屋</h3>
             <p class="tag-count">1件の投稿</p>
           </div>
         </div>
@@ -635,6 +1221,22 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     
     <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%8F%E3%82%8B%E3%81%BE%E3%82%8C" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">くるまれ</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
       <a href="https://www.ramune-diary.com/tags/%E3%81%90%E3%81%86%E3%81%9F%E3%82%89%E3%82%BF%E3%82%A4%E3%83%A0" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
@@ -651,7 +1253,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     
     <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E3%81%94%E3%81%AF%E3%82%93" class="db link dim">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%A1%E3%82%87%E3%81%A3%E3%81%A8%E5%86%92%E9%99%BA" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -659,7 +1261,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
           </div>
           <div class="tag-info">
-            <h3 class="tag-name">ごはん</h3>
+            <h3 class="tag-name">ちょっと冒険</h3>
             <p class="tag-count">1件の投稿</p>
           </div>
         </div>
@@ -683,6 +1285,22 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     
     <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%AD%E3%81%93%E3%81%AE%E3%81%84%E3%82%8B%E6%9A%AE%E3%82%89%E3%81%97" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">ねこのいる暮らし</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
       <a href="https://www.ramune-diary.com/tags/%E3%81%AD%E3%81%9A%E3%81%BF" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
@@ -699,6 +1317,70 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     
     <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%B2%E3%81%A3%E3%81%9D%E3%82%8A" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">ひっそり</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%B2%E3%81%AA%E3%81%9F%E3%81%BC%E3%81%A3%E3%81%93" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">ひなたぼっこ</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%B2%E3%82%87%E3%81%A3%E3%81%93%E3%82%8A" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">ひょっこり</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%B5%E3%82%82%E3%81%B5%E3%82%82" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">ふもふも</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
       <a href="https://www.ramune-diary.com/tags/%E3%81%B5%E3%82%8F%E3%81%B5%E3%82%8F%E3%82%AD%E3%83%A3%E3%83%83%E3%83%81" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
@@ -708,6 +1390,70 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="tag-info">
             <h3 class="tag-name">ふわふわキャッチ</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%BD%E3%81%8B%E3%81%BD%E3%81%8B" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">ぽかぽか</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%BE%E3%81%A3%E3%81%9F%E3%82%8A" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">まったり</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%81%BE%E3%81%A8%E3%82%81" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">まとめ</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%82%82%E3%81%B5%E3%82%82%E3%81%B5" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">もふもふ</h3>
             <p class="tag-count">1件の投稿</p>
           </div>
         </div>
@@ -747,22 +1493,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     
     <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B9" class="db link dim">
-        <div class="tag-content">
-          <div class="tag-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
-            </svg>
-          </div>
-          <div class="tag-info">
-            <h3 class="tag-name">オフィス</h3>
-            <p class="tag-count">1件の投稿</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    
-    <div class="tag-item">
       <a href="https://www.ramune-diary.com/tags/%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B9%E3%81%AE%E7%99%92%E3%81%97" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
@@ -779,7 +1509,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     
     <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B9%E7%8C%AB" class="db link dim">
+      <a href="https://www.ramune-diary.com/tags/%E3%82%AB%E3%83%A1%E3%83%A9" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -787,7 +1517,71 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
           </div>
           <div class="tag-info">
-            <h3 class="tag-name">オフィス猫</h3>
+            <h3 class="tag-name">カメラ</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%82%AB%E3%83%A1%E3%83%A9%E7%9B%AE%E7%B7%9A" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">カメラ目線</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%82%AD%E3%83%83%E3%83%81%E3%83%B3" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">キッチン</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%82%AD%E3%83%A3%E3%83%AA%E3%83%BC" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">キャリー</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%82%B4%E3%83%AD%E3%82%B4%E3%83%AD" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">ゴロゴロ</h3>
             <p class="tag-count">1件の投稿</p>
           </div>
         </div>
@@ -811,7 +1605,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     
     <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E3%83%80%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB" class="db link dim">
+      <a href="https://www.ramune-diary.com/tags/%E3%82%B9%E3%83%9E%E3%83%9B%E5%86%99%E7%9C%9F" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -819,7 +1613,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
           </div>
           <div class="tag-info">
-            <h3 class="tag-name">ダンボール</h3>
+            <h3 class="tag-name">スマホ写真</h3>
             <p class="tag-count">1件の投稿</p>
           </div>
         </div>
@@ -836,22 +1630,6 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="tag-info">
             <h3 class="tag-name">ダンボール探検</h3>
-            <p class="tag-count">1件の投稿</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    
-    <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB" class="db link dim">
-        <div class="tag-content">
-          <div class="tag-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
-            </svg>
-          </div>
-          <div class="tag-info">
-            <h3 class="tag-name">チュール</h3>
             <p class="tag-count">1件の投稿</p>
           </div>
         </div>
@@ -891,7 +1669,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     
     <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E3%83%AA%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9" class="db link dim">
+      <a href="https://www.ramune-diary.com/tags/%E3%83%A1%E3%83%8C%E3%82%A8%E3%83%83%E3%83%88" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -899,8 +1677,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
           </div>
           <div class="tag-info">
-            <h3 class="tag-name">リラックス</h3>
-            <p class="tag-count">3件の投稿</p>
+            <h3 class="tag-name">メヌエット</h3>
+            <p class="tag-count">1件の投稿</p>
           </div>
         </div>
       </a>
@@ -916,6 +1694,86 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="tag-info">
             <h3 class="tag-name">リラックスタイム</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E3%83%AF%E3%82%AF%E3%83%AF%E3%82%AF" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">ワクワク</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E4%BB%B2%E9%96%93" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">仲間</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E4%BC%91%E6%86%A9" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">休憩</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E5%8D%88%E5%BE%8C" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">午後</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E5%A4%9C%E3%81%AE%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B9" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">夜のオフィス</h3>
             <p class="tag-count">1件の投稿</p>
           </div>
         </div>
@@ -939,7 +1797,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     
     <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E6%8E%A2%E6%A4%9C" class="db link dim">
+      <a href="https://www.ramune-diary.com/tags/%E5%B1%85%E5%BF%83%E5%9C%B0%E3%81%AE%E8%89%AF%E3%81%84%E5%A0%B4%E6%89%80" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -947,15 +1805,15 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
           </div>
           <div class="tag-info">
-            <h3 class="tag-name">探検</h3>
-            <p class="tag-count">3件の投稿</p>
+            <h3 class="tag-name">居心地の良い場所</h3>
+            <p class="tag-count">1件の投稿</p>
           </div>
         </div>
       </a>
     </div>
     
     <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E6%8E%A2%E6%A4%9C%E4%B8%AD" class="db link dim">
+      <a href="https://www.ramune-diary.com/tags/%E5%BE%85%E6%A9%9F" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -963,15 +1821,15 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
           </div>
           <div class="tag-info">
-            <h3 class="tag-name">探検中</h3>
-            <p class="tag-count">2件の投稿</p>
+            <h3 class="tag-name">待機</h3>
+            <p class="tag-count">1件の投稿</p>
           </div>
         </div>
       </a>
     </div>
     
     <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E6%96%B0%E7%99%BA%E8%A6%8B" class="db link dim">
+      <a href="https://www.ramune-diary.com/tags/%E6%8A%B1%E3%81%A3%E3%81%93" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -979,7 +1837,183 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
           </div>
           <div class="tag-info">
-            <h3 class="tag-name">新発見</h3>
+            <h3 class="tag-name">抱っこ</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E6%8E%A2%E7%B4%A2" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">探索</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E6%92%AE%E5%BD%B1" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">撮影</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E6%92%AE%E5%BD%B1tips" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">撮影tips</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E6%96%B0%E3%81%97%E3%81%84%E5%8F%8B%E9%81%94" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">新しい友達</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E6%98%A5" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">春</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E6%9A%96%E3%81%8B%E3%81%84" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">暖かい</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E6%A4%85%E5%AD%90" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">椅子</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E6%A5%BD%E3%81%97%E3%81%84" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">楽しい</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E6%B0%97%E6%8C%81%E3%81%A1%E3%81%84%E3%81%84" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">気持ちいい</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E7%89%B9%E7%AD%89%E5%B8%AD" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">特等席</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E7%8C%AB%E3%81%AE%E5%93%81%E7%A8%AE" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">猫の品種</h3>
             <p class="tag-count">1件の投稿</p>
           </div>
         </div>
@@ -1003,7 +2037,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     
     <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E7%A7%98%E5%AF%86%E5%9F%BA%E5%9C%B0" class="db link dim">
+      <a href="https://www.ramune-diary.com/tags/%E7%94%98%E3%81%88%E3%82%93%E3%81%BC" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -1011,15 +2045,15 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
           </div>
           <div class="tag-info">
-            <h3 class="tag-name">秘密基地</h3>
-            <p class="tag-count">2件の投稿</p>
+            <h3 class="tag-name">甘えんぼ</h3>
+            <p class="tag-count">1件の投稿</p>
           </div>
         </div>
       </a>
     </div>
     
     <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E9%81%8A%E3%81%B3" class="db link dim">
+      <a href="https://www.ramune-diary.com/tags/%E7%99%BA%E8%A6%8B" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -1027,8 +2061,104 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>
           </div>
           <div class="tag-info">
-            <h3 class="tag-name">遊び</h3>
-            <p class="tag-count">2件の投稿</p>
+            <h3 class="tag-name">発見</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E7%9F%AD%E8%B6%B3%E7%8C%AB" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">短足猫</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E7%A7%BB%E5%8B%95" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">移動</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E7%AA%93%E8%BE%BA" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">窓辺</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E8%81%B7%E5%A0%B4" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">職場</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E8%A6%B3%E5%AF%9F" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">観察</h3>
+            <p class="tag-count">1件の投稿</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="tag-item">
+      <a href="https://www.ramune-diary.com/tags/%E9%80%B1%E6%AC%A1" class="db link dim">
+        <div class="tag-content">
+          <div class="tag-icon">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
+            </svg>
+          </div>
+          <div class="tag-info">
+            <h3 class="tag-name">週次</h3>
+            <p class="tag-count">1件の投稿</p>
           </div>
         </div>
       </a>
@@ -1044,22 +2174,6 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="tag-info">
             <h3 class="tag-name">配線</h3>
-            <p class="tag-count">1件の投稿</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    
-    <div class="tag-item">
-      <a href="https://www.ramune-diary.com/tags/%E9%9A%A0%E3%82%8C%E5%AE%B6" class="db link dim">
-        <div class="tag-content">
-          <div class="tag-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-              <path d="M17.63,5.84C17.27,5.33 16.67,5 16,5L5,5.01C3.9,5.01 3,5.9 3,7v10c0,1.1 0.9,2 2,2h11c0.67,0 1.27,-0.33 1.63,-0.84L22,12l-4.37,-6.16z"/>
-            </svg>
-          </div>
-          <div class="tag-info">
-            <h3 class="tag-name">隠れ家</h3>
             <p class="tag-count">1件の投稿</p>
           </div>
         </div>
@@ -1270,7 +2384,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <footer class="bg-light-orange bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://www.ramune-diary.com/" >
-    &copy;  ラムネの日々 2025 
+    &copy;  ラムネの日々 2026 
   </a>
     <div><div class="ananke-socials"></div>
 </div>

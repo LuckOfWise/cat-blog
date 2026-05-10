@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja-jp">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -48,7 +48,7 @@
   <meta property="og:site_name" content="ラムネの日々">
   <meta property="og:title" content="配線">
   <meta property="og:description" content="オフィス猫ラムネの可愛い日常を写真で綴るブログ。毎日のお昼寝、探検、おやつの時間など、愛らしい猫の日々をお楽しみください。">
-  <meta property="og:locale" content="ja_jp">
+  <meta property="og:locale" content="ja">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="配線">
@@ -70,16 +70,56 @@
   OneSignal.push(function() {
     OneSignal.init({
       appId: "573400b8-97dd-4b8f-b416-760352a8739b",
+      language: 'ja',
       notifyButton: {
-        enable: true
+        enable: true,
+        size: 'medium',
+        position: 'bottom-right',
+        showCredit: false,
+        text: {
+          'tip.state.unsubscribed': 'ラムネの新しい記事を受け取る',
+          'tip.state.subscribed': '通知を受け取り中だにゃん',
+          'tip.state.blocked': '通知がブロックされてるにゃ',
+          'message.prenotify': 'クリックして購読',
+          'message.action.subscribed': 'ありがとうにゃ〜！新しい記事が出たらお知らせするにゃん🐾',
+          'message.action.resubscribed': 'おかえり！新しい記事が出たらお知らせするにゃん🐾',
+          'message.action.unsubscribed': 'またね、ラムネの記事はいつでも見にきてにゃ',
+          'dialog.main.title': 'ラムネの日々の通知',
+          'dialog.main.button.subscribe': '受け取る',
+          'dialog.main.button.unsubscribe': '解除する',
+          'dialog.blocked.title': '通知がブロックされてるにゃ',
+          'dialog.blocked.message': 'ブラウザの設定から通知を許可してにゃ〜'
+        }
       },
-      language: 'ja'
+      welcomeNotification: {
+        disable: false,
+        title: 'ラムネの日々',
+        message: 'ようこそにゃん🐾 新しい投稿が出たらお知らせするにゃ〜',
+        url: 'https://www.ramune-diary.com/'
+      },
+      promptOptions: {
+        slidedown: {
+          prompts: [{
+            type: 'push',
+            autoPrompt: false,
+            text: {
+              actionMessage: 'ラムネの新しい投稿を見逃さない通知を受け取りますか？',
+              acceptButton: '受け取る',
+              cancelButton: '今はやめとく'
+            }
+          }]
+        }
+      }
     });
   });
 </script>
 
 
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eb54a95b1d834a38aa4b91ee396c1b13"}'></script>
+
+
+    
+    
 
     
 
@@ -121,6 +161,12 @@ body {
 
 
 
+
+
+
+  
+
+
   
 
 
@@ -144,8 +190,7 @@ body {
 <meta property="og:title" content="配線">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://www.ramune-diary.com//favicon.svg">
-<meta property="og:image:width" content="800">
-<meta property="og:image:height" content="600">
+
 <meta property="og:image:alt" content="配線の画像">
 <meta property="og:url" content="https://www.ramune-diary.com/tags/%E9%85%8D%E7%B7%9A/">
 <meta property="og:site_name" content="ラムネの日々">
@@ -160,8 +205,8 @@ body {
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://www.ramune-diary.com//favicon.svg">
 <meta name="twitter:image:alt" content="配線の画像">
-<meta name="twitter:creator" content="@ramune_cat">
-<meta name="twitter:site" content="@ramune_cat">
+<meta name="twitter:domain" content="ramune-diary.com">
+
 
 
 <meta name="robots" content="index, follow">
@@ -209,14 +254,32 @@ body {
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/posts/" title="投稿一覧 page">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/posts/" title="投稿一覧 ページ">
               投稿一覧
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/tags/" title="タグ一覧 page">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/tags/" title="タグ一覧 ページ">
               タグ一覧
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/archive/" title="アーカイブ ページ">
+              アーカイブ
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/about/" title="ラムネについて ページ">
+              ラムネについて
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/contact/" title="お問い合わせ ページ">
+              お問い合わせ
             </a>
           </li>
           
@@ -259,6 +322,24 @@ body {
           <li class="mobile-menu-item">
             <a href="https://www.ramune-diary.com/tags/" class="mobile-menu-link">
               タグ一覧
+            </a>
+          </li>
+          
+          <li class="mobile-menu-item">
+            <a href="https://www.ramune-diary.com/archive/" class="mobile-menu-link">
+              アーカイブ
+            </a>
+          </li>
+          
+          <li class="mobile-menu-item">
+            <a href="https://www.ramune-diary.com/about/" class="mobile-menu-link">
+              ラムネについて
+            </a>
+          </li>
+          
+          <li class="mobile-menu-item">
+            <a href="https://www.ramune-diary.com/contact/" class="mobile-menu-link">
+              お問い合わせ
             </a>
           </li>
           
@@ -524,25 +605,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     <div class="grid-item">
       <a href="https://www.ramune-diary.com/posts/post-2025-08-03t00-38-34/" class="db link dim">
         
-        <div class="aspect-ratio aspect-ratio--1x1">
-          <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2025-08-03T00-38-34.jpg');" loading="lazy"></div>
-          <time class="date-overlay">2025-08-03</time>
-        </div>
-        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2025-08-03T00-38-34.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2025-08-03</time>
+  
+</div>
+
+
         <div class="pa2 bg-white">
           <h3 class="f6 fw6 ma0 black truncate">ラムネの配線迷路探検！</h3>
         </div>
@@ -682,6 +754,24 @@ document.addEventListener('DOMContentLoaded', function() {
     border-radius: 17px 17px 0 0;
   }
 
+  .video-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    padding-left: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+  }
+
    
   nav a {
     color: #FFFFFF !important;
@@ -777,7 +867,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <footer class="bg-light-orange bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://www.ramune-diary.com/" >
-    &copy;  ラムネの日々 2025 
+    &copy;  ラムネの日々 2026 
   </a>
     <div><div class="ananke-socials"></div>
 </div>

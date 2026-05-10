@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja-jp">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -48,13 +48,13 @@
   <meta property="og:site_name" content="ラムネの日々">
   <meta property="og:title" content="探検">
   <meta property="og:description" content="オフィス猫ラムネの可愛い日常を写真で綴るブログ。毎日のお昼寝、探検、おやつの時間など、愛らしい猫の日々をお楽しみください。">
-  <meta property="og:locale" content="ja_jp">
+  <meta property="og:locale" content="ja">
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="探検">
   <meta itemprop="description" content="オフィス猫ラムネの可愛い日常を写真で綴るブログ。毎日のお昼寝、探検、おやつの時間など、愛らしい猫の日々をお楽しみください。">
-  <meta itemprop="datePublished" content="2025-08-04T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-08-04T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2026-05-09T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-05-09T00:00:00+00:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="探検">
   <meta name="twitter:description" content="オフィス猫ラムネの可愛い日常を写真で綴るブログ。毎日のお昼寝、探検、おやつの時間など、愛らしい猫の日々をお楽しみください。">
@@ -70,16 +70,56 @@
   OneSignal.push(function() {
     OneSignal.init({
       appId: "573400b8-97dd-4b8f-b416-760352a8739b",
+      language: 'ja',
       notifyButton: {
-        enable: true
+        enable: true,
+        size: 'medium',
+        position: 'bottom-right',
+        showCredit: false,
+        text: {
+          'tip.state.unsubscribed': 'ラムネの新しい記事を受け取る',
+          'tip.state.subscribed': '通知を受け取り中だにゃん',
+          'tip.state.blocked': '通知がブロックされてるにゃ',
+          'message.prenotify': 'クリックして購読',
+          'message.action.subscribed': 'ありがとうにゃ〜！新しい記事が出たらお知らせするにゃん🐾',
+          'message.action.resubscribed': 'おかえり！新しい記事が出たらお知らせするにゃん🐾',
+          'message.action.unsubscribed': 'またね、ラムネの記事はいつでも見にきてにゃ',
+          'dialog.main.title': 'ラムネの日々の通知',
+          'dialog.main.button.subscribe': '受け取る',
+          'dialog.main.button.unsubscribe': '解除する',
+          'dialog.blocked.title': '通知がブロックされてるにゃ',
+          'dialog.blocked.message': 'ブラウザの設定から通知を許可してにゃ〜'
+        }
       },
-      language: 'ja'
+      welcomeNotification: {
+        disable: false,
+        title: 'ラムネの日々',
+        message: 'ようこそにゃん🐾 新しい投稿が出たらお知らせするにゃ〜',
+        url: 'https://www.ramune-diary.com/'
+      },
+      promptOptions: {
+        slidedown: {
+          prompts: [{
+            type: 'push',
+            autoPrompt: false,
+            text: {
+              actionMessage: 'ラムネの新しい投稿を見逃さない通知を受け取りますか？',
+              acceptButton: '受け取る',
+              cancelButton: '今はやめとく'
+            }
+          }]
+        }
+      }
     });
   });
 </script>
 
 
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "eb54a95b1d834a38aa4b91ee396c1b13"}'></script>
+
+
+    
+    
 
     
 
@@ -121,6 +161,12 @@ body {
 
 
 
+
+
+
+  
+
+
   
 
 
@@ -144,8 +190,7 @@ body {
 <meta property="og:title" content="探検">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://www.ramune-diary.com//favicon.svg">
-<meta property="og:image:width" content="800">
-<meta property="og:image:height" content="600">
+
 <meta property="og:image:alt" content="探検の画像">
 <meta property="og:url" content="https://www.ramune-diary.com/tags/%E6%8E%A2%E6%A4%9C/">
 <meta property="og:site_name" content="ラムネの日々">
@@ -160,8 +205,8 @@ body {
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://www.ramune-diary.com//favicon.svg">
 <meta name="twitter:image:alt" content="探検の画像">
-<meta name="twitter:creator" content="@ramune_cat">
-<meta name="twitter:site" content="@ramune_cat">
+<meta name="twitter:domain" content="ramune-diary.com">
+
 
 
 <meta name="robots" content="index, follow">
@@ -209,14 +254,32 @@ body {
         <ul class="pl0 mr3">
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/posts/" title="投稿一覧 page">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/posts/" title="投稿一覧 ページ">
               投稿一覧
             </a>
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/tags/" title="タグ一覧 page">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/tags/" title="タグ一覧 ページ">
               タグ一覧
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/archive/" title="アーカイブ ページ">
+              アーカイブ
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/about/" title="ラムネについて ページ">
+              ラムネについて
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="https://www.ramune-diary.com/contact/" title="お問い合わせ ページ">
+              お問い合わせ
             </a>
           </li>
           
@@ -259,6 +322,24 @@ body {
           <li class="mobile-menu-item">
             <a href="https://www.ramune-diary.com/tags/" class="mobile-menu-link">
               タグ一覧
+            </a>
+          </li>
+          
+          <li class="mobile-menu-item">
+            <a href="https://www.ramune-diary.com/archive/" class="mobile-menu-link">
+              アーカイブ
+            </a>
+          </li>
+          
+          <li class="mobile-menu-item">
+            <a href="https://www.ramune-diary.com/about/" class="mobile-menu-link">
+              ラムネについて
+            </a>
+          </li>
+          
+          <li class="mobile-menu-item">
+            <a href="https://www.ramune-diary.com/contact/" class="mobile-menu-link">
+              お問い合わせ
             </a>
           </li>
           
@@ -524,77 +605,482 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     <div class="grid-item">
-      <a href="https://www.ramune-diary.com/posts/post-2025-08-04t01-41-48/" class="db link dim">
+      <a href="https://www.ramune-diary.com/posts/post-2026-05-09t18-14-51/" class="db link dim">
         
-        <div class="aspect-ratio aspect-ratio--1x1">
-          <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2025-08-04T01-41-48.jpg');" loading="lazy"></div>
-          <time class="date-overlay">2025-08-04</time>
-        </div>
-        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-05-09T18-14-51.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-05-09</time>
+  
+</div>
+
+
         <div class="pa2 bg-white">
-          <h3 class="f6 fw6 ma0 black truncate">ラムネの冒険心満載な一日</h3>
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの休日探検日記</h3>
         </div>
       </a>
     </div>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     <div class="grid-item">
-      <a href="https://www.ramune-diary.com/posts/post-2025-08-03t00-38-34/" class="db link dim">
+      <a href="https://www.ramune-diary.com/posts/post-2026-04-24t17-14-25/" class="db link dim">
         
-        <div class="aspect-ratio aspect-ratio--1x1">
-          <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2025-08-03T00-38-34.jpg');" loading="lazy"></div>
-          <time class="date-overlay">2025-08-03</time>
-        </div>
-        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-04-24T17-14-25.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-04-24</time>
+  
+</div>
+
+
         <div class="pa2 bg-white">
-          <h3 class="f6 fw6 ma0 black truncate">ラムネの配線迷路探検！</h3>
+          <h3 class="f6 fw6 ma0 black truncate">ラムネのオフィス探検な一日</h3>
         </div>
       </a>
     </div>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     <div class="grid-item">
-      <a href="https://www.ramune-diary.com/posts/post-2025-07-31t03-53-54/" class="db link dim">
+      <a href="https://www.ramune-diary.com/posts/post-2026-04-17t08-55-16/" class="db link dim">
         
-        <div class="aspect-ratio aspect-ratio--1x1">
-          <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2025-07-31T03-53-54.jpg');" loading="lazy"></div>
-          <time class="date-overlay">2025-07-31</time>
-        </div>
-        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-04-17T08-55-16.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-04-17</time>
+  
+</div>
+
+
         <div class="pa2 bg-white">
-          <h3 class="f6 fw6 ma0 black truncate">ラムネの探検とお昼ごはん</h3>
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの探検な一日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-04-13t10-58-43/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-04-13T10-58-43.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-04-13</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネのオフィスでのドキドキ発見な一日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-04-09t14-12-11/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-04-09T14-12-11.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-04-09</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの探検な一日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-04-03t13-09-35/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-04-03T13-09-35.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-04-03</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの春のさくら散歩な一日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-04-01t08-52-27/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-04-01T08-52-27.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-04-01</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの探検な一日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-03-28t09-21-03/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-03-28T09-21-03.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-03-28</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの休日探検日記</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-03-26t10-24-40/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-03-26T10-24-40.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-03-26</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネのオフィス探検日記</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-03-24t12-38-15/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-03-24T12-38-15.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-03-24</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネのオフィス探検日記</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-03-19t18-35-24/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-03-19T18-35-24.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-03-19</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの隠れんぼな一日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-03-18t11-46-14/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-03-18T11-46-14.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-03-18</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネのちょっとした探検の日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-03-10t10-52-39/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-03-10T10-52-39.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-03-10</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの探検な一日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-03-06t10-38-27/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-03-06T10-38-27.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-03-06</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの新しい発見な一日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-03-05t18-06-22/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-03-05T18-06-22.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-03-05</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネのオフィスでの新しい発見</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-03-03t10-23-21/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-03-03T10-23-21.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-03-03</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネのオフィス探検な一日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-02-18t10-53-05/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-02-18T10-53-05.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-02-18</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネのちょっとした冒険な一日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-02-17t18-14-14/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-02-17T18-14-14.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-02-17</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの探検日和</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-02-11t11-17-07/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-02-11T11-17-07.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-02-11</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの水遊びな一日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-02-10t12-48-16/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-02-10T12-48-16.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-02-10</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの観察日記</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-02-05t09-54-14/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-02-05T09-54-14.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-02-05</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネのオフィス探検な一日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-01-25t07-37-21/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-01-25T07-37-21.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-01-25</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネののんびり休日</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-01-24t11-14-07/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-01-24T11-14-07.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-01-24</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネのリラックスタイム</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-01-17t10-15-43/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-01-17T10-15-43.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-01-17</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネのくつろぎタイム</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-01-13t10-04-19/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-01-13T10-04-19.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-01-13</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネのオフィス探検</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-01-09t10-49-59/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-01-09T10-49-59.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-01-09</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの隠れ家探検</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-01-07t17-55-30/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-01-07T17-55-30.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-01-07</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの静かな隠れ家</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2026-01-05t11-10-38/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2026-01-05T11-10-38.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2026-01-05</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの探検日和</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2025-12-31t10-36-00/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2025-12-31T10-36-00.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2025-12-31</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネのオフィス探検日記</h3>
+        </div>
+      </a>
+    </div>
+    
+    <div class="grid-item">
+      <a href="https://www.ramune-diary.com/posts/post-2025-12-29t10-00-47/" class="db link dim">
+        
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('https://www.ramune-diary.com/images/cat-2025-12-29T10-00-47.jpg');" loading="lazy"></div>
+  <time class="date-overlay">2025-12-29</time>
+  
+</div>
+
+
+        <div class="pa2 bg-white">
+          <h3 class="f6 fw6 ma0 black truncate">ラムネの今日の冒険</h3>
         </div>
       </a>
     </div>
@@ -602,6 +1088,15 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 
   
+  
+  <nav class="cf pa3 pa5-ns tc">
+    
+    
+    <a class="fr dib link dim black f6 f5-ns b pa2" href="https://www.ramune-diary.com/tags/%E6%8E%A2%E6%A4%9C/page/2/">
+      次のページ &rarr;
+    </a>
+    
+  </nav>
   
 </div>
 
@@ -732,6 +1227,24 @@ document.addEventListener('DOMContentLoaded', function() {
     border-radius: 17px 17px 0 0;
   }
 
+  .video-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    padding-left: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+  }
+
    
   nav a {
     color: #FFFFFF !important;
@@ -827,7 +1340,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <footer class="bg-light-orange bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://www.ramune-diary.com/" >
-    &copy;  ラムネの日々 2025 
+    &copy;  ラムネの日々 2026 
   </a>
     <div><div class="ananke-socials"></div>
 </div>
