@@ -73,8 +73,9 @@
 <meta name="twitter:description" content="{{ $description }}">
 <meta name="twitter:image" content="{{ $ogImage }}">
 <meta name="twitter:image:alt" content="{{ if .IsHome }}{{ .Site.Title }}のロゴ{{ else }}{{ .Title }}の画像{{ end }}">
-<meta name="twitter:creator" content="@ramune_cat">
-<meta name="twitter:site" content="@ramune_cat">
+<meta name="twitter:domain" content="ramune-diary.com">
+{{ with site.Params.twitter_handle }}<meta name="twitter:creator" content="{{ . }}">
+<meta name="twitter:site" content="{{ . }}">{{ end }}
 
 <!-- Additional SEO Meta Tags -->
 <meta name="robots" content="{{ if hugo.IsProduction }}index, follow{{ else }}noindex, nofollow{{ end }}">
