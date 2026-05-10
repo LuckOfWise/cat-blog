@@ -1,0 +1,34 @@
+{{- /*
+  PR / 広告開示 shortcode.
+  Usage:
+    {{< pr >}}                                              -> "本記事は提供品レビューです" デフォルト文
+    {{< pr type="provided" sponsor="〇〇株式会社" >}}        -> 商品提供を伴うPR
+    {{< pr type="paid" sponsor="〇〇株式会社" >}}            -> スポンサード投稿（金銭授受あり）
+    {{< pr type="affiliate" >}}                             -> アフィリエイトリンクを含む記事
+    {{< pr type="custom" text="独自開示文" >}}
+*/ -}}
+{{- $type := .Get "type" | default "provided" -}}
+{{- $sponsor := .Get "sponsor" -}}
+{{- $custom := .Get "text" -}}
+{{- $msg := "" -}}
+{{- if eq $type "custom" -}}
+  {{- $msg = $custom -}}
+{{- else if eq $type "provided" -}}
+  {{- if $sponsor -}}
+    {{- $msg = printf "本記事は %s さまから商品の提供を受けて作成しています。感想は本人（ラムネ）の率直なものです。" $sponsor -}}
+  {{- else -}}
+    {{- $msg = "本記事は商品の提供を受けて作成しています。感想は本人（ラムネ）の率直なものです。" -}}
+  {{- end -}}
+{{- else if eq $type "paid" -}}
+  {{- if $sponsor -}}
+    {{- $msg = printf "#PR 本記事は %s さまの依頼によるスポンサード投稿です。" $sponsor -}}
+  {{- else -}}
+    {{- $msg = "#PR 本記事はスポンサード投稿です。" -}}
+  {{- end -}}
+{{- else if eq $type "affiliate" -}}
+  {{- $msg = "本記事には Amazon アソシエイト等のアフィリエイトリンクを含みます。リンク経由のご購入で運営者に紹介料が入る場合があります。" -}}
+{{- end -}}
+
+<aside class="pr-disclosure" role="note" aria-label="広告開示" style="border-left:4px solid #FF9900; background:#FFF8E1; padding:0.75em 1em; margin:1em 0; border-radius:6px; font-size:0.9em; color:#333;">
+  <strong style="color:#B36B00;">📣 開示</strong> {{ $msg | safeHTML }}
+</aside>
