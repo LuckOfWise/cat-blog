@@ -1,15 +1,27 @@
 {{ $images := findRE `!\[.*?\]\(([^)]+)\)` .RawContent }}
 {{ $image := "" }}
+{{ $ogImage := "" }}
+{{ $ogWidth := "" }}
+{{ $ogHeight := "" }}
 {{ if $images }}
   {{ $match := index $images 0 }}
   {{ $rawImage := replaceRE `!\[.*?\]\(([^)]+)\)` "$1" $match }}
   {{ if strings.HasPrefix $rawImage "/" }}
     {{ $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" $rawImage) }}
+    {{ $base := path.Base $rawImage }}
+    {{ if os.FileExists (printf "static/ogp/%s" $base) }}
+      {{ $ogImage = printf "%s%s" .Site.BaseURL (printf "ogp/%s" $base) }}
+      {{ $ogWidth = "1200" }}
+      {{ $ogHeight = "630" }}
+    {{ end }}
   {{ else }}
     {{ $image = $rawImage }}
   {{ end }}
 {{ else }}
   {{ $image = printf "%s/favicon.svg" .Site.BaseURL }}
+{{ end }}
+{{ if not $ogImage }}
+  {{ $ogImage = $image }}
 {{ end }}
 
 {{ $description := "" }}
@@ -37,9 +49,9 @@
 <!-- Open Graph Meta Tags -->
 <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
 <meta property="og:description" content="{{ $description }}">
-<meta property="og:image" content="{{ $image }}">
-<meta property="og:image:width" content="800">
-<meta property="og:image:height" content="600">
+<meta property="og:image" content="{{ $ogImage }}">
+{{ if $ogWidth }}<meta property="og:image:width" content="{{ $ogWidth }}">
+<meta property="og:image:height" content="{{ $ogHeight }}">{{ end }}
 <meta property="og:image:alt" content="{{ if .IsHome }}{{ .Site.Title }}のロゴ{{ else }}{{ .Title }}の画像{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
@@ -59,7 +71,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
 <meta name="twitter:description" content="{{ $description }}">
-<meta name="twitter:image" content="{{ $image }}">
+<meta name="twitter:image" content="{{ $ogImage }}">
 <meta name="twitter:image:alt" content="{{ if .IsHome }}{{ .Site.Title }}のロゴ{{ else }}{{ .Title }}の画像{{ end }}">
 <meta name="twitter:creator" content="@ramune_cat">
 <meta name="twitter:site" content="@ramune_cat">

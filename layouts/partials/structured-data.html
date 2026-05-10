@@ -58,11 +58,20 @@
 {{ else if .IsPage }}
 {{ $images := findRE `!\[.*?\]\(([^)]+)\)` .RawContent }}
 {{ $image := "" }}
+{{ $imageWidth := 800 }}
+{{ $imageHeight := 600 }}
 {{ if $images }}
   {{ $match := index $images 0 }}
   {{ $rawImage := replaceRE `!\[.*?\]\(([^)]+)\)` "$1" $match }}
   {{ if strings.HasPrefix $rawImage "/" }}
-    {{ $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" $rawImage) }}
+    {{ $base := path.Base $rawImage }}
+    {{ if os.FileExists (printf "static/ogp/%s" $base) }}
+      {{ $image = printf "%s%s" .Site.BaseURL (printf "ogp/%s" $base) }}
+      {{ $imageWidth = 1200 }}
+      {{ $imageHeight = 630 }}
+    {{ else }}
+      {{ $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" $rawImage) }}
+    {{ end }}
   {{ else }}
     {{ $image = $rawImage }}
   {{ end }}
@@ -97,8 +106,8 @@
   "image": {
     "@type": "ImageObject",
     "url": "{{ $image }}",
-    "width": 800,
-    "height": 600
+    "width": {{ $imageWidth }},
+    "height": {{ $imageHeight }}
   },
   {{ end }}
   "mainEntityOfPage": {
