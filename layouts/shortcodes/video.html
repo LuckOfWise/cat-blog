@@ -1,0 +1,6 @@
+{{- $src := .Get "src" -}}
+{{- $poster := .Get "poster" -}}
+<video controls preload="metadata" style="max-width:100%; height:auto;"{{ with $poster }} poster="{{ . }}"{{ end }}>
+  <source src="{{ $src }}" type="video/mp4">
+  お使いのブラウザは動画再生に対応していません。
+</video>
