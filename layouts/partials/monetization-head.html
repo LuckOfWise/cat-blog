@@ -1,0 +1,16 @@
+{{- /*
+  Inject AdSense and GA4 scripts in <head> when corresponding params are set.
+  Both stay inert if site.Params.* is empty (フェーズ2で有効化).
+*/ -}}
+{{- with site.Params.adsense_publisher_id -}}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}" crossorigin="anonymous"></script>
+{{- end -}}
+{{- with site.Params.google_analytics_id -}}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '{{ . }}');
+</script>
+{{- end -}}

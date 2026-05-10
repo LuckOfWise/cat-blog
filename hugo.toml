@@ -11,6 +11,14 @@ canonifyURLs = true
   description = "オフィス猫ラムネの可愛い日常を写真で綴るブログ。毎日のお昼寝、探検、おやつの時間など、愛らしい猫の日々をお楽しみください。"
   favicon = "/favicon.ico"
   custom_css = []
+
+  # Monetization (フェーズ2で有効化、空文字列なら無効)
+  amazon_associate_tag = ""        # 例: "ramunediary-22"
+  adsense_publisher_id = ""        # 例: "ca-pub-XXXXXXXXXXXXXXXX"
+  google_analytics_id = ""         # 例: "G-XXXXXXXXXX"
+
+  # SNS
+  instagram_account = "everyday_ramune"
   
 [params.ananke]
   show_recent_posts = true
@@ -32,6 +40,16 @@ paginate = 30
   name = "タグ一覧"
   url = "/tags/"
   weight = 20
+
+[[menu.main]]
+  name = "ラムネについて"
+  url = "/about/"
+  weight = 30
+
+[[menu.main]]
+  name = "お問い合わせ"
+  url = "/contact/"
+  weight = 40
 
 # SEO Settings
 enableRobotsTXT = true

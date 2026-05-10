@@ -1,0 +1,22 @@
+{{- /*
+  Amazon Associate link shortcode.
+  Usage:
+    {{< amazon asin="B0EXAMPLE" title="キャットタワー" >}}
+    {{< amazon asin="B0EXAMPLE" title="キャットタワー" image="/images/extra/tower.jpg" >}}
+  Inactive (renders as plain link) when site.Params.amazon_associate_tag is empty.
+*/ -}}
+{{- $asin := .Get "asin" -}}
+{{- $title := .Get "title" -}}
+{{- $image := .Get "image" -}}
+{{- $tag := site.Params.amazon_associate_tag -}}
+{{- $base := printf "https://www.amazon.co.jp/dp/%s" $asin -}}
+{{- $href := $base -}}
+{{- if $tag -}}
+  {{- $href = printf "%s?tag=%s" $base $tag -}}
+{{- end -}}
+
+<a class="amazon-link" href="{{ $href }}" target="_blank" rel="sponsored noopener">
+  {{- if $image }}<img src="{{ $image }}" alt="{{ $title }}" loading="lazy" style="max-width:160px; vertical-align:middle; margin-right:8px; border-radius:8px;">{{ end -}}
+  {{ $title }}
+  <span class="amazon-cta" style="font-size:0.85em; color:#FF9900; margin-left:6px;">Amazonで見る →</span>
+</a>

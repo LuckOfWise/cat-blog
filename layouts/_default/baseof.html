@@ -55,6 +55,9 @@
     {{/* Include head-additions.html directly */}}
     {{ partials.Include "head-additions.html" . }}
 
+    {{/* Monetization scripts (AdSense / GA4), inert when params unset */}}
+    {{ partials.Include "monetization-head.html" . }}
+
     {{ block "head" . }}{{ end }}
   </head>
 
