@@ -12,7 +12,22 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://www.ramune-diary.com/posts/review-heatcozy-litter-mat/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.ramune-diary.com/posts/review-petkit-pure-max2/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://www.ramune-diary.com/posts/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.ramune-diary.com/posts/review-raku-cat-tower/</loc>
     <lastmod>2026-05-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -52,7 +67,17 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://www.ramune-diary.com/tags/%E3%82%AD%E3%83%A3%E3%83%83%E3%83%88%E3%82%BF%E3%83%AF%E3%83%BC/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://www.ramune-diary.com/tags/%E3%82%B9%E3%83%9E%E3%83%9B%E5%86%99%E7%9C%9F/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.ramune-diary.com/tags/%E3%83%88%E3%82%A4%E3%83%AC%E3%83%9E%E3%83%83%E3%83%88/</loc>
     <lastmod>2026-05-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -62,7 +87,17 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://www.ramune-diary.com/posts/review-furminator-long-hair/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://www.ramune-diary.com/privacy/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.ramune-diary.com/tags/%E3%83%96%E3%83%A9%E3%83%83%E3%82%B7%E3%83%B3%E3%82%B0/</loc>
     <lastmod>2026-05-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -107,6 +142,11 @@
                 href="https://www.ramune-diary.com/"
                 />
   </url><url>
+    <loc>https://www.ramune-diary.com/tags/%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://www.ramune-diary.com/tags/%E6%92%AE%E5%BD%B1/</loc>
     <lastmod>2026-05-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -117,12 +157,27 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://www.ramune-diary.com/tags/%E8%87%AA%E5%8B%95%E3%83%88%E3%82%A4%E3%83%AC/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://www.ramune-diary.com/tags/%E8%81%B7%E5%A0%B4/</loc>
     <lastmod>2026-05-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://www.ramune-diary.com/tags/%E7%9F%AD%E8%B6%B3%E7%8C%AB/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.ramune-diary.com/tags/%E9%95%B7%E6%AF%9B%E7%8C%AB/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://www.ramune-diary.com/tags/%E7%8C%AB%E3%82%B0%E3%83%83%E3%82%BA/</loc>
     <lastmod>2026-05-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
