@@ -32,7 +32,7 @@ defaultContentLanguageInSubdir = false
   # Monetization (フェーズ2で有効化、空文字列なら無効)
   amazon_associate_tag = ""        # 例: "ramunediary-22"
   adsense_publisher_id = ""        # 例: "ca-pub-XXXXXXXXXXXXXXXX"
-  google_analytics_id = ""         # 例: "G-XXXXXXXXXX"
+  google_analytics_id = "G-N03ZGQP5LM"  # GA4 ramune-diary
 
   # SNS
   instagram_account = "everyday_ramune"

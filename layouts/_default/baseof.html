@@ -48,9 +48,7 @@
     {{- template "_internal/schema.html" . -}}
     {{- template "_internal/twitter_cards.html" . -}}
 
-    {{ if hugo.IsProduction }}
-      {{ template "_internal/google_analytics.html" . }}
-    {{ end }}
+    {{/* GA4 is injected via partials/monetization-head.html (params.google_analytics_id) */}}
 
     {{/* Include head-additions.html directly */}}
     {{ partials.Include "head-additions.html" . }}
