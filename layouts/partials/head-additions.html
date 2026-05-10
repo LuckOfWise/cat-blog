@@ -5,10 +5,46 @@
   OneSignal.push(function() {
     OneSignal.init({
       appId: "573400b8-97dd-4b8f-b416-760352a8739b",
+      language: 'ja',
       notifyButton: {
-        enable: true
+        enable: true,
+        size: 'medium',
+        position: 'bottom-right',
+        showCredit: false,
+        text: {
+          'tip.state.unsubscribed': 'ラムネの新しい記事を受け取る',
+          'tip.state.subscribed': '通知を受け取り中だにゃん',
+          'tip.state.blocked': '通知がブロックされてるにゃ',
+          'message.prenotify': 'クリックして購読',
+          'message.action.subscribed': 'ありがとうにゃ〜！新しい記事が出たらお知らせするにゃん🐾',
+          'message.action.resubscribed': 'おかえり！新しい記事が出たらお知らせするにゃん🐾',
+          'message.action.unsubscribed': 'またね、ラムネの記事はいつでも見にきてにゃ',
+          'dialog.main.title': 'ラムネの日々の通知',
+          'dialog.main.button.subscribe': '受け取る',
+          'dialog.main.button.unsubscribe': '解除する',
+          'dialog.blocked.title': '通知がブロックされてるにゃ',
+          'dialog.blocked.message': 'ブラウザの設定から通知を許可してにゃ〜'
+        }
       },
-      language: 'ja'
+      welcomeNotification: {
+        disable: false,
+        title: 'ラムネの日々',
+        message: 'ようこそにゃん🐾 新しい投稿が出たらお知らせするにゃ〜',
+        url: 'https://www.ramune-diary.com/'
+      },
+      promptOptions: {
+        slidedown: {
+          prompts: [{
+            type: 'push',
+            autoPrompt: false,
+            text: {
+              actionMessage: 'ラムネの新しい投稿を見逃さない通知を受け取りますか？',
+              acceptButton: '受け取る',
+              cancelButton: '今はやめとく'
+            }
+          }]
+        }
+      }
     });
   });
 </script>

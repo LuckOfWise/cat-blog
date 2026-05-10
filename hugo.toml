@@ -3,6 +3,23 @@ languageCode = "ja-jp"
 title = "ラムネの日々"
 theme = "ananke"
 canonifyURLs = true
+defaultContentLanguage = "ja"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.ja]
+    languageName = "日本語"
+    weight = 1
+    title = "ラムネの日々"
+    [languages.ja.params]
+      description = "オフィス猫ラムネの可愛い日常を写真で綴るブログ。毎日のお昼寝、探検、おやつの時間など、愛らしい猫の日々をお楽しみください。"
+  [languages.en]
+    languageName = "English"
+    weight = 2
+    title = "Everyday Ramune"
+    contentDir = "content/en"
+    [languages.en.params]
+      description = "Ramune is an office cat in Tokyo. Daily naps, curious eyes, and fluffy moments — translated highlights from the Japanese blog."
 
 [params]
   mainSections = ["posts"]

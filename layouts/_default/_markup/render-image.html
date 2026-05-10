@@ -1,0 +1,28 @@
+{{- /*
+  Render Markdown images as <picture> with WebP fallback when a .webp
+  sibling exists in static/. For images outside the WebP-ready dirs
+  (static/images/, /ig/, /ogp/), or when no .webp file exists, fall
+  back to a plain <img>.
+*/ -}}
+{{- $src := .Destination -}}
+{{- $alt := .PlainText -}}
+{{- $title := .Title -}}
+
+{{- /* Compute WebP candidate: only for site-relative paths ending in .jpg */ -}}
+{{- $webpSrc := "" -}}
+{{- if and (strings.HasPrefix $src "/") (strings.HasSuffix $src ".jpg") -}}
+  {{- $webpRel := replace $src ".jpg" ".webp" -}}
+  {{- $localPath := printf "static%s" $webpRel -}}
+  {{- if os.FileExists $localPath -}}
+    {{- $webpSrc = $webpRel -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $webpSrc -}}
+<picture>
+  <source srcset="{{ $webpSrc }}" type="image/webp">
+  <img src="{{ $src }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+</picture>
+{{- else -}}
+<img src="{{ $src }}" alt="{{ $alt }}"{{ with $title }} title="{{ . }}"{{ end }} loading="lazy" decoding="async">
+{{- end -}}
