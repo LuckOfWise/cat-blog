@@ -1,0 +1,49 @@
+{{- /*
+  Renders the grid item's thumbnail block for a given page.
+  Falls back from markdown image → video shortcode poster → "No Image" placeholder.
+  Adds a play-icon overlay when the post contains a {{< video >}} shortcode.
+*/ -}}
+{{- $content := .RawContent -}}
+{{- $image := "" -}}
+{{- $isVideo := false -}}
+
+{{- $imgMatches := findRE `!\[.*?\]\(([^)]+)\)` $content 1 -}}
+{{- if $imgMatches -}}
+  {{- $rawImage := replaceRE `!\[.*?\]\(([^)]+)\)` "$1" (index $imgMatches 0) -}}
+  {{- if strings.HasPrefix $rawImage "/" -}}
+    {{- $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" $rawImage) -}}
+  {{- else -}}
+    {{- $image = $rawImage -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $videoMatches := findRE `\{\{<\s*video[^>]*>\}\}` $content 1 -}}
+{{- if $videoMatches -}}
+  {{- $isVideo = true -}}
+  {{- if not $image -}}
+    {{- $posterMatches := findRE `poster="([^"]+)"` (index $videoMatches 0) 1 -}}
+    {{- if $posterMatches -}}
+      {{- $rawPoster := replaceRE `poster="([^"]+)"` "$1" (index $posterMatches 0) -}}
+      {{- if strings.HasPrefix $rawPoster "/" -}}
+        {{- $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" $rawPoster) -}}
+      {{- else -}}
+        {{- $image = $rawPoster -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{ if $image }}
+<div class="aspect-ratio aspect-ratio--1x1">
+  <div class="aspect-ratio--object cover" style="background-image: url('{{ $image }}');" loading="lazy"></div>
+  <time class="date-overlay">{{ .Date.Format "2006-01-02" }}</time>
+  {{ if $isVideo }}<span class="video-badge" aria-label="動画">▶</span>{{ end }}
+</div>
+{{ else }}
+<div class="aspect-ratio aspect-ratio--1x1 bg-gray">
+  <div class="aspect-ratio--object flex items-center justify-center">
+    <span class="white f6">{{ if $isVideo }}🎬 動画{{ else }}No Image{{ end }}</span>
+  </div>
+  <time class="date-overlay">{{ .Date.Format "2006-01-02" }}</time>
+</div>
+{{ end }}

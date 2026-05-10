@@ -39,9 +39,9 @@
 
   <!-- Tags Grid -->
   <div class="tags-container">
-    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+    {{ range .Site.Taxonomies.tags.ByCount }}
     <div class="tag-item">
-      <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}" class="db link dim">
+      <a href="{{ "/tags/" | relURL }}{{ .Name | urlize }}" class="db link dim">
         <div class="tag-content">
           <div class="tag-icon">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -49,8 +49,8 @@
             </svg>
           </div>
           <div class="tag-info">
-            <h3 class="tag-name">{{ $name }}</h3>
-            <p class="tag-count">{{ len $taxonomy }}件の投稿</p>
+            <h3 class="tag-name">{{ .Name }}</h3>
+            <p class="tag-count">{{ .Count }}件の投稿</p>
           </div>
         </div>
       </a>
