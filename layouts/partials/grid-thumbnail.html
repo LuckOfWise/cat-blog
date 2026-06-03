@@ -1,19 +1,33 @@
 {{- /*
   Renders the grid item's thumbnail block for a given page.
-  Falls back from markdown image → video shortcode poster → "No Image" placeholder.
+  Falls back from front-matter `thumbnail` → markdown image → video shortcode poster → "No Image" placeholder.
   Adds a play-icon overlay when the post contains a {{< video >}} shortcode.
+  動画記事は本文に markdown 画像を持たないため、front matter に
+  `thumbnail: /videos/cat-<date>.jpg` を指定すると一覧にサムネが出る。
 */ -}}
 {{- $content := .RawContent -}}
 {{- $image := "" -}}
 {{- $isVideo := false -}}
 
-{{- $imgMatches := findRE `!\[.*?\]\(([^)]+)\)` $content 1 -}}
-{{- if $imgMatches -}}
-  {{- $rawImage := replaceRE `!\[.*?\]\(([^)]+)\)` "$1" (index $imgMatches 0) -}}
-  {{- if strings.HasPrefix $rawImage "/" -}}
-    {{- $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" $rawImage) -}}
+{{- /* 1. front matter thumbnail を最優先（動画記事用） */ -}}
+{{- with .Params.thumbnail -}}
+  {{- if strings.HasPrefix . "/" -}}
+    {{- $image = printf "%s%s" $.Site.BaseURL (strings.TrimPrefix "/" .) -}}
   {{- else -}}
-    {{- $image = $rawImage -}}
+    {{- $image = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* 2. 本文先頭の markdown 画像 */ -}}
+{{- if not $image -}}
+  {{- $imgMatches := findRE `!\[.*?\]\(([^)]+)\)` $content 1 -}}
+  {{- if $imgMatches -}}
+    {{- $rawImage := replaceRE `!\[.*?\]\(([^)]+)\)` "$1" (index $imgMatches 0) -}}
+    {{- if strings.HasPrefix $rawImage "/" -}}
+      {{- $image = printf "%s%s" .Site.BaseURL (strings.TrimPrefix "/" $rawImage) -}}
+    {{- else -}}
+      {{- $image = $rawImage -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
