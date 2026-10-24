@@ -1,0 +1,20 @@
+{{- /* Preserve A8-issued URLs without enabling raw HTML for all Markdown. */ -}}
+{{- $href := .Get "href" -}}
+{{- $text := .Get "text" -}}
+{{- $pixel := .Get "pixel" -}}
+{{- if not (and $href $text $pixel) -}}
+  {{- errorf "a8 shortcode requires href, text and pixel: %s" .Position -}}
+{{- else -}}
+  {{- $link := urls.Parse $href -}}
+  {{- $image := urls.Parse $pixel -}}
+  {{- if not (and (eq $link.Scheme "https") (eq $link.Host "px.a8.net") (eq $link.Path "/svt/ejp")) -}}
+    {{- errorf "a8 shortcode requires an A8-issued HTTPS product link: %s" .Position -}}
+  {{- else if not (and (eq $image.Scheme "https") (findRE `^www[0-9]+\.a8\.net$` $image.Host) (eq $image.Path "/0.gif")) -}}
+    {{- errorf "a8 shortcode requires an A8-issued HTTPS pixel: %s" .Position -}}
+  {{- else if not (and ($link.Query.Get "a8mat") (eq ($link.Query.Get "a8mat") ($image.Query.Get "a8mat"))) -}}
+    {{- errorf "a8 shortcode link and pixel must belong to the same issued code: %s" .Position -}}
+  {{- else -}}
+<a href="{{ $href }}" rel="nofollow">{{ $text }}</a>
+<img border="0" width="1" height="1" src="{{ $pixel }}" alt="">
+  {{- end -}}
+{{- end -}}
