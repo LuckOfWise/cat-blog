@@ -11,6 +11,11 @@
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '{{ . }}');
+// Explicit QA visits can be inspected in DebugView and excluded by GA4's developer filter.
+var analyticsConfig = {};
+if (new URLSearchParams(window.location.search).get('analytics_debug') === '1') {
+  analyticsConfig.debug_mode = true;
+}
+gtag('config', '{{ . }}', analyticsConfig);
 </script>
 {{- end -}}
