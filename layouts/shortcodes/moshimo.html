@@ -1,0 +1,16 @@
+{{- /* Preserve Moshimo-issued blog links and matching impression pixels. */ -}}
+{{- $href := .Get "href" -}}
+{{- $pixel := .Get "pixel" -}}
+{{- $text := .Get "text" -}}
+{{- $link := urls.Parse $href -}}
+{{- $image := urls.Parse $pixel -}}
+{{- if not (and $href $pixel $text (eq $link.Scheme "") (eq $link.Host "af.moshimo.com") (eq $link.Path "/af/c/click") (eq $image.Scheme "") (eq $image.Host "i.moshimo.com") (eq $image.Path "/af/i/impression")) -}}
+  {{- errorf "moshimo shortcode requires issued protocol-relative link/pixel URLs: %s" .Position -}}
+{{- else -}}
+  {{- range slice "a_id" "p_id" "pc_id" "pl_id" -}}
+    {{- if not (and ($link.Query.Get .) (eq ($link.Query.Get .) ($image.Query.Get .))) -}}
+      {{- errorf "moshimo shortcode link/pixel IDs differ: %s" $.Position -}}
+    {{- end -}}
+  {{- end -}}
+<a href="{{ $href }}" rel="nofollow" referrerpolicy="no-referrer-when-downgrade" attributionsrc>{{ $text }}</a><img src="{{ $pixel }}" width="1" height="1" style="border:none;" alt="" loading="lazy">
+{{- end -}}
