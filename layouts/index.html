@@ -16,12 +16,20 @@
 {{ define "main" }}
 {{ $mainSections := site.Params.mainSections | default (slice "posts") }}
 {{ $pages := where .Site.RegularPages "Section" "in" $mainSections }}
+{{/* Group the four text-only purchase guides by purpose instead of blank photo cards. */}}
+{{ if eq .Language.Lang "ja" }}
+  {{ $guidePages := slice }}
+  {{ range site.Data.purchase_guides }}
+    {{ with site.GetPage .page }}{{ $guidePages = $guidePages | append . }}{{ end }}
+  {{ end }}
+  {{ $pages = $pages | complement $guidePages }}
+{{ end }}
 {{ $paginator := .Paginate $pages 30 }}
 
 <div class="pa3 pa4-ns">
   <!-- Photo Grid -->
   <div class="grid-container">
-    {{ range $paginator.Pages }}
+    {{ range $index, $page := $paginator.Pages }}
     <div class="grid-item">
       <a href="{{ .RelPermalink }}" class="db link dim">
         {{ partial "grid-thumbnail.html" . }}
@@ -30,6 +38,9 @@
         </div>
       </a>
     </div>
+    {{ if and (eq $paginator.PageNumber 1) (eq $index 5) }}
+      {{ partial "purchase-guides.html" $ }}
+    {{ end }}
     {{ end }}
   </div>
 

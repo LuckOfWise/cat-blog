@@ -1,0 +1,41 @@
+{{ if eq .Language.Lang "ja" }}
+<section class="purchase-guides" aria-label="猫用品の購入前ガイド">
+  <h2>猫用品を選ぶときに</h2>
+  <p class="purchase-guides-note">PR：リンク先の記事には広告が含まれます。用途・サイズ・費用から確認できます。</p>
+  <div class="purchase-guides-links">
+  {{ range site.Data.purchase_guides }}
+    {{ $guide := . }}
+    {{ with site.GetPage .page }}
+      {{ if not .Draft }}
+      <a href="{{ .RelPermalink }}?entry=home-guide">
+        <strong>{{ $guide.purpose }} <span aria-hidden="true">→</span></strong>
+        <span>{{ $guide.detail }}</span>
+      </a>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  </div>
+</section>
+<script>
+// Keep QA marked after following an internal guide link, without changing ad URLs.
+if (new URLSearchParams(window.location.search).get('analytics_debug') === '1') {
+  document.querySelectorAll('.purchase-guides a').forEach(function(link) {
+    var url = new URL(link.href);
+    url.searchParams.set('analytics_debug', '1');
+    link.href = url.href;
+  });
+}
+</script>
+<style>
+.purchase-guides{grid-column:1/-1;background:#fffdf6;border:1px solid #d7c9b6;border-radius:12px;padding:20px;color:#343434;margin:8px 0 20px;}
+.purchase-guides h2{font-size:1.25rem;line-height:1.5;margin:0 0 6px;color:#644326;}
+.purchase-guides-note{font-size:.85rem;line-height:1.7;margin:0 0 14px;}
+.purchase-guides-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+.purchase-guides-links a{display:block;padding:14px;background:white;border:1px solid #d7c9b6;border-radius:8px;color:#343434;text-decoration:none;line-height:1.6;}
+.purchase-guides-links strong{display:block;color:#684019;font-size:1rem;text-decoration:underline;text-underline-offset:3px;}
+.purchase-guides-links a>span{display:block;margin-top:5px;font-size:.85rem;}
+.purchase-guides-links a:hover{background:#fff4df;}
+.purchase-guides-links a:focus-visible{outline:3px solid #684019;outline-offset:3px;}
+@media(max-width:600px){.purchase-guides{padding:14px;}.purchase-guides-links{grid-template-columns:1fr;}}
+</style>
+{{ end }}
